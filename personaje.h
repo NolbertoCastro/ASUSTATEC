@@ -10,7 +10,7 @@ class Personaje{
     private:
         std::string nombre;
         Habitacion habitacionActual;
-        Item inventario;
+        Item inventario[7];
         int vida;
         int proteccion;
         int daño;
@@ -29,7 +29,8 @@ class Personaje{
         void setNombre(std::string);
         void setHabitacionActual(Habitacion);
         void setItem(Item);
-        void caminar(char); //Norte(n)_Sur(s)_Este(e)_Oeste(o)
+        void caminar(std::string); //Norte(n)_Sur(s)_Este(e)_Oeste(o)
+        void buscarItem(std::string);
         void imprimir(); //Habitacion actual
 };
 
