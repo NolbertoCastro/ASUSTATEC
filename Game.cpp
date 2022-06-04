@@ -62,5 +62,10 @@ int main(){
 
     cout << "\nEmpezarás en al inicio del pasillo localizado al lado del cuarto #5, tendrás que recorrer los cuartos, vencer enemigos, comprar objetos." << endl;
     cout << "\nTodo con el objetivo de conseguir la tarjeta de alumno tec para acceder al elevador." << endl;
-   
+    cout << "\nPara poder desplazarte por el mapa podras usar los siguientes comandos:" << endl;
+    
+    cout << "\nMover N = Arriba" << endl;
+    cout << "Mover S = Abajo" << endl;
+    cout << "Mover O = Izquierda" << endl;
+    cout << "Mover E = Derecha" << endl;
 };
