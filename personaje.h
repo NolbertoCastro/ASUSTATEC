@@ -1,5 +1,4 @@
 #include <iostream>
-
 #include "habitacion.h"
 #include "item.h"
 
@@ -10,7 +9,7 @@ class Personaje{
     private:
         std::string nombre;
         Habitacion habitacionActual;
-        Item inventario[7];
+        Item inventario[10];
         int vida;
         int proteccion;
         int daño;

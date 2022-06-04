@@ -9,6 +9,7 @@ class Habitacion{
       std::string nombre;
       std::string descripcion;
       Item items;
+      Habitacion* Salida;
       //Habitacion salidas; 
 
     public:
