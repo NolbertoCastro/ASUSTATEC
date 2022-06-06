@@ -7,6 +7,7 @@ class Item{
     private:
         std::string descripcion;
         std::string nombre;
+        int peso;
     public:
         Item();
         Item(std::string, std::string);
