@@ -3,7 +3,6 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "Comando.h"
 
 class ListaPalabras{
     public:
@@ -12,6 +11,7 @@ class ListaPalabras{
         int esComando(std::string);
         Comando* getComando(std::string);
         std::string todosLosComandos();
+
     private:
         std::vector <std::string> palabras;
         std::vector <Comando*> comandos;

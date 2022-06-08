@@ -2,10 +2,10 @@
 #include "habitacion.h"
 #include "item.h"
 
-#ifndef PERSONAJE_H
-#define PERSONAJE_H
+#ifndef Character_H
+#define Character_H
 
-class Personaje{
+class Character{
     private:
         std::string nombre;
         Habitacion habitacionActual;
@@ -14,8 +14,8 @@ class Personaje{
         int proteccion;
         int daño;
     public:
-        Personaje();
-        Personaje(std::string, Habitacion, Item);
+        Character();
+        Character(std::string, Habitacion, Item);
         std::string getNombre() const;
         Habitacion getHabitacionActual() const;
         Item getInventario() const;

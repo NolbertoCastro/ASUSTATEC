@@ -1,7 +1,6 @@
 #ifndef COMANDO_H
 #define COMANDO_H
 #include <iostream>
-
 class Comando{
     public:
         Comando();
