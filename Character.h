@@ -15,7 +15,7 @@ class Character{
         int daño;
     public:
         Character();
-        Character(std::string, Habitacion, Item);
+        Character(std::string, Habitacion, Item, int, int, int);
         std::string getNombre() const;
         Habitacion getHabitacionActual() const;
         Item getInventario() const;
@@ -26,7 +26,7 @@ class Character{
         void setdaño(int);
         void setproteccion(int);
         void setNombre(std::string);
-        void setHabitacionActual(Habitacion);
+        void setHabitacionActual(Habitacion*);
         void setItem(Item);
         void caminar(std::string); //Norte(n)_Sur(s)_Este(e)_Oeste(o)
         void buscarItem(std::string);

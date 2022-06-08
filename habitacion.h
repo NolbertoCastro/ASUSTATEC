@@ -1,27 +1,23 @@
 #include <iostream>
+#include "item.h"
 
 #ifndef HABITACION_H
 #define HABITACION_H
-#include "item.h"
 
 class Habitacion{
     private:
-      std::string nombre;
-      std::string descripcion;
-      Item items;
-      Habitacion* Salida;
-      //Habitacion salidas; 
+        std::string nombre, descripcion;
+        Item items[3];
+        Habitacion* salida;
 
     public:
-      Habitacion();
-      Habitacion(std::string,std::string,Item);
-      Item getItem(int);
-      Habitacion getSalida(char);
-      std::string getDescrpcionLarga();
-      std::string getNombre();
-      void setItem(int, Item);
-      void setSalida(char, Habitacion);
-      void setNombre(std::string);
+        Habitacion();
+        Habitacion(std::string, std::string, Habitacion*, Item[3]);
+
+        std::string getDescripcion() const;
+        std::string getNombre() const;
+        Item getItem() const;
+        Habitacion* getSalida() const;
 };
 
 #endif

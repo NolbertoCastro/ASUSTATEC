@@ -25,7 +25,7 @@ void Game::creaElementos(){
     libro=new Item("libro", 15);
     monedas=new Item("Oro", 100);
     llave=new Item("Llave", 0);
-    personaje->setPosicion(sala);
+    personaje->setHabitacionActual(sala);
     sala->agregaItem(libro);
     sala->agregaItem(monedas);
     comedor->agregaItem(pocion);
