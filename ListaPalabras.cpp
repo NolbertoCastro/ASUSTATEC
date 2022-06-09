@@ -13,7 +13,7 @@ int ListaPalabras::esComando(std::string pal){
         if (palabras[i]==pal){
             return i;
         }
-    }
+    } 
     return -1;
 }
 
