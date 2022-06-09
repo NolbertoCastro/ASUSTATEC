@@ -7,7 +7,7 @@
 #include "habitacion.h"
 #include "item.h"
 
-class Personaje{
+class Character{
     private:
         std::string nombre;
         int vida, ataque, dinero, proteccion;

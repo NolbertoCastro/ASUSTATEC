@@ -1,36 +1,45 @@
-#include <iostream>
-#include "habitacion.h"
-#include "item.h"
-
 #ifndef Character_H
 #define Character_H
+
+#include <iostream>
+#include <vector>
+
+#include "habitacion.h"
+#include "item.h"
 
 class Character{
     private:
         std::string nombre;
-        Habitacion habitacionActual;
-        Item inventario[10];
-        int vida;
-        int proteccion;
-        int daño;
+        int vida, ataque, dinero, proteccion;
+        Habitacion* habitacionActual;
+        std::vector <Item*> inventario;
     public:
         Character();
-        Character(std::string, Habitacion, Item, int, int, int);
+        Character(std::string, int, Habitacion*, std::vector <Item*>, int, int, int);
+
         std::string getNombre() const;
+        int getVida() const;
         Habitacion getHabitacionActual() const;
-        Item getInventario() const;
-        int getvida();
-        int getproteccion();
-        int getdaño();
-        void setvida(int);
-        void setdaño(int);
-        void setproteccion(int);
+        std::vector <Item*> getInventario() const;
+        int getAtaque() const;
+        int getDinero() const;
+        int getProteccion() const;
+
         void setNombre(std::string);
+        void setVida(int);
         void setHabitacionActual(Habitacion*);
-        void setItem(Item);
-        void caminar(std::string); //Norte(n)_Sur(s)_Este(e)_Oeste(o)
-        void buscarItem(std::string);
-        void imprimir(); //Habitacion actual
+        void setInventario(std::vector <Item*>);
+        void setAtaque(int);
+        void setDinero(int);
+        void setProteccion(int);
+
+        void agregarItem(Item*);
+
+        Item* consultaItem(int) const;
+
+        bool camina(std::string);
+
+        void imprime();
 };
 
 #endif
