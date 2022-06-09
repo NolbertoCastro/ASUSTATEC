@@ -4,14 +4,14 @@
 #include <iostream>
 #include <vector>
 
-#include "habitacion.h"
+#include "Room.h"
 #include "item.h"
 
 class Character{
     private:
         std::string nombre;
         int vida, ataque, dinero, proteccion;
-        Habitacion* habitacionActual;
+        Room* habitacionActual;
         std::vector <Item*> inventario;
     public:
         Character();
@@ -19,7 +19,7 @@ class Character{
 
         std::string getNombre() const;
         int getVida() const;
-        Habitacion* getHabitacionActual();
+        Habitacion* getposicion();
         std::vector <Item*> getInventario() const;
         int getAtaque() const;
         int getDinero() const;
@@ -27,7 +27,7 @@ class Character{
 
         void setNombre(std::string);
         void setVida(int);
-        void setHabitacionActual(Habitacion*);
+        void setposicion(Habitacion*);
         void setInventario(std::vector <Item*>);
         void setAtaque(int);
         void setDinero(int);

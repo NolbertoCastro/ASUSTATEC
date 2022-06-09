@@ -1,11 +1,11 @@
 #include "pluma.h"
 
 Pluma::Pluma(){
-    extraDanio = 0;
+    setExtra(0);
 }
 
 Pluma::Pluma(std::string _nombre, std::string _descripcion, int _peso, int _extraDanio):Item(_nombre, _descripcion, _peso){
-    extraDanio = _extraDanio;
+    setExtra(_extraDanio);
 }
 
 int Pluma::getExtraDanio(){

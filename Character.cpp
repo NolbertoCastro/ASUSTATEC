@@ -11,13 +11,13 @@ Character::Character(){
 }
 
 Character::Character(std::string _nombre, int _vida, Habitacion* _habitacionActual, std::vector <Item*> _inventario, int _ataque, int _dinero, int _proteccion){
-    nombre = _nombre;
-    vida = _vida;
-    habitacionActual = _habitacionActual;
-    inventario = _inventario;
-    ataque = _ataque;
-    dinero = _dinero;
-    proteccion = _proteccion;
+    setNombre(_nombre);
+    setVida(_vida);
+    setHabitacionActual(_habitacionActual);
+    setInventario(_inventario);
+    setAtaque(_ataque);
+    setDinero(_dinero);
+    setProteccion(_proteccion);
 }
 
 std::string Character::getNombre() const{
@@ -28,7 +28,7 @@ int Character::getVida() const{
     return vida;
 }
 
-Habitacion* Character::getHabitacionActual(){
+Habitacion* Character::getposicion(){
     return habitacionActual;
 }
 
@@ -56,7 +56,7 @@ void Character::setVida(int _vida){
     vida = _vida;
 }
 
-void Character::setHabitacionActual(Habitacion* _habitacionActual){
+void Character::setposicion(Habitacion* _habitacionActual){
     habitacionActual = _habitacionActual;
 }
 
