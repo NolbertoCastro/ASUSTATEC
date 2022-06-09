@@ -35,3 +35,8 @@ void Item::setNombre(std::string _nombre){
 void Item::setPeso(int _peso){
     peso = _peso;
 }
+
+void Item::imprimirItem(){
+    std::cout << nombre << ", Peso: " << peso << std::endl;
+    std::cout << "Descripción:" << descripcion << std::endl;
+}

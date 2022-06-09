@@ -19,7 +19,7 @@ class Character{
 
         std::string getNombre() const;
         int getVida() const;
-        Habitacion getHabitacionActual() const;
+        Habitacion* getHabitacionActual();
         std::vector <Item*> getInventario() const;
         int getAtaque() const;
         int getDinero() const;
@@ -37,9 +37,8 @@ class Character{
 
         Item* consultaItem(int) const;
 
-        bool camina(std::string);
-
         void imprime();
+        void imprimeInventario();
 };
 
 #endif

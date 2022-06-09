@@ -1,7 +1,6 @@
-#include <iostream>
-
 #ifndef ITEM_H
 #define ITEM_H
+#include <iostream>
 
 class Item{
     private:
@@ -20,6 +19,7 @@ class Item{
         void setDescripcion(std::string);
         void setNombre(std::string);
         void setPeso(int);
+        virtual void imprimirItem();
 };
 
 #endif
