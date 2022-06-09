@@ -4,18 +4,18 @@
 #include <iostream>
 #include "item.h"
 #include "habitacion.h"
-#include "personaje.h"
+#include "Character.h"
 
-class Comerciante:public Personaje{
+class Comerciante:public Character{
     private:
-        Item inventario[5];
+        Item* inventario[5];
 
     public:
         Comerciante();
-        Comerciante(std::string, int, Habitacion*, std::vector <Item*>, int, int, int, Item[]);
+        Comerciante(std::string, int, Habitacion*, std::vector <Item*>, int, int, int, Item*[5]);
 
-        Item getItem(int);
-        bool getTarjeta(int);
+        Item* getItem(int);
+        Item* getTarjeta(int);
 };
 
 #endif

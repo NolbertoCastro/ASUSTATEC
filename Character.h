@@ -35,7 +35,7 @@ class Character{
 
         void agregarItem(Item*);
 
-        Item* consultaItem(int) const;
+        void consultaItem(std::string);
 
         void imprime();
         void imprimeInventario();

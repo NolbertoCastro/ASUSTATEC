@@ -89,8 +89,12 @@ void Character::agregarItem(Item* _item){
     }
 }
 
-Item* Character::consultaItem(int) const{
-
+void Character::consultaItem(std::string item){
+    for(int i =0; i < inventario.size(); i++){
+        if (inventario[i]->getNombre() == item){
+            inventario[i]->imprimirItem();
+        } 
+    }
 }
 
 void Character::imprimeInventario(){
