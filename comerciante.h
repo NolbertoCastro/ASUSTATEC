@@ -2,8 +2,8 @@
 #define COMERCIANTE_H
 
 #include <iostream>
-#include "item.h"
-#include "habitacion.h"
+#include "Item.h"
+#include "Room.h"
 #include "Character.h"
 
 class Comerciante:public Character{
@@ -12,7 +12,7 @@ class Comerciante:public Character{
 
     public:
         Comerciante();
-        Comerciante(std::string, int, Habitacion*, std::vector <Item*>, int, int, int, Item*[5]);
+        Comerciante(std::string, int, Room*, std::vector <Item*>, int, int, int, Item*[5]);
 
         Item* getItem(int);
         Item* getTarjeta(int);

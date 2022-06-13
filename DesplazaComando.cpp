@@ -10,8 +10,8 @@ void DesplazaComando::ejecuta(){
     }
     else{
         std::string direc = getSegPalabra();
-        if (jugador->setposicion(direc)){
-            Room* actual=jugador->getposicion();
+        if (jugador->camina(direc)){
+            Room* actual=jugador->getPosicion();
             std::cout << "Te has movido hacia el " << direc << std::endl;
             std::cout << "Ahora estas en: " << actual->getDescripcion() << std::endl;
         }

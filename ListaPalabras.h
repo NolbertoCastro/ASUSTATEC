@@ -2,8 +2,8 @@
 #define LISTAPALABRAS_H
 #include <iostream>
 #include <vector>
-#include "Comando.h"
 #include <string>
+#include "Comando.h"
 
 class ListaPalabras{
     public:
