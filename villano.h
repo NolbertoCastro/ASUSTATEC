@@ -1,20 +1,18 @@
-#include <iostream>
-#include "item.h"
-#include "habitacion.h"
-#include "personaje.h"
-
 #ifndef VILLANO_H
 #define VILLANO_H
 
+#include <iostream>
+#include "item.h"
+#include "Room.h"
+#include "Character.h"
 
-
-class Villano:public Personaje{
+class Villano:public Character{
     private:
         Item recompensa;
 
     public:
         Villano();
-        Villano(std::string, int, Habitacion*, std::vector <Item*>, int, int, int, Item);
+        Villano(std::string, int, Room*, std::vector <Item*>, int, int, int, Item);
 
         Item getRecompensa() const;
 

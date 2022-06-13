@@ -11,15 +11,15 @@ class Character{
     private:
         std::string nombre;
         int vida, ataque, dinero, proteccion;
-        Room* habitacionActual;
+        Room* RoomActual;
         std::vector <Item*> inventario;
     public:
         Character();
-        Character(std::string, int, Habitacion*, std::vector <Item*>, int, int, int);
+        Character(std::string, int, Room*, std::vector <Item*>, int, int, int);
 
         std::string getNombre() const;
         int getVida() const;
-        Habitacion* getposicion();
+        Room* getposicion();
         std::vector <Item*> getInventario() const;
         int getAtaque() const;
         int getDinero() const;
@@ -27,7 +27,7 @@ class Character{
 
         void setNombre(std::string);
         void setVida(int);
-        void setposicion(Habitacion*);
+        void setposicion(Room*);
         void setInventario(std::vector <Item*>);
         void setAtaque(int);
         void setDinero(int);

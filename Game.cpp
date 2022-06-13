@@ -16,26 +16,25 @@ void Game::creaComandos(){
 
 /*crea todos los elementos que están presentes en el juego 
 y los configura (cuartos sus salidas y que objetos hay en cada room)*/
-void Game::creaElementos(){
-    //personaje=new Character("Fabi asustada", 150);
-    sala=new Room("Sala de la casa, totalmente amueblada", false);
-    comedor=new Room("Comedor con mesa para 8 personas", false);
-    jardin=new Room("Jardin!!! Estas fuera de la casa", true);
-    pocion=new Item("pocion", 50);
-    libro=new Item("libro", 15);
-    monedas=new Item("Oro", 100);
-    llave=new Item("Llave", 0);
-    //personaje->setHabitacionActual(sala);
-    sala->agregaItem(libro);
-    sala->agregaItem(monedas);
-    comedor->agregaItem(pocion);
-    comedor->agregaItem(llave);
-    sala->setSalidas(comedor, nullptr, nullptr, nullptr);
-    comedor->setSalidas(nullptr, sala, jardin, nullptr);
-}
+// void Game::creaElementos(){
+//     //personaje=new Character("Fabi asustada", 150);
+//     sala=new Room("Sala de la casa, totalmente amueblada", false);
+//     comedor=new Room("Comedor con mesa para 8 personas", false);
+//     jardin=new Room("Jardin!!! Estas fuera de la casa", true);
+//     pocion=new Item("pocion", 50);
+//     libro=new Item("libro", 15);
+//     monedas=new Item("Oro", 100);
+//     llave=new Item("Llave", 0);
+//     //personaje->setHabitacionActual(sala);
+//     sala->agregaItem(libro);
+//     sala->agregaItem(monedas);
+//     comedor->agregaItem(pocion);
+//     comedor->agregaItem(llave);
+//     sala->setSalidas(comedor, nullptr, nullptr, nullptr);
+//     comedor->setSalidas(nullptr, sala, jardin, nullptr);
+// }
 
 void Game::imprimeBienvenida(){
-
     std::cout << "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░" << std::endl;
     std::cout << "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░" << std::endl;
     std::cout << "░░░░░░░░░░█░░░░░░█░░░█░░░█░░░░░██░░░██████░░███░░░████████░░██████░░░░░█░░░░░░" << std::endl;
@@ -101,9 +100,8 @@ void Game::imprimeBienvenida(){
     std::cout << "Si necesitas ayuda teclea la palabra: ayuda" << std::endl;
 }
 
- void Game::play()
-    {
-        imprimeBienvenida();
+ void Game::play(){
+    imprimeBienvenida();
     //     bool finished = false;
     //     while (!finished) {
     //         Comando* comando = parser.generaComando();

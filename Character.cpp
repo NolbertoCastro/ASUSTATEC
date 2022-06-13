@@ -3,17 +3,17 @@
 Character::Character(){
     setNombre(" ");
     setVida(0);
-    setHabitacionActual(habitacionActual);
+    setposicion(RoomActual);
     setInventario(inventario);
     setAtaque(0);
     setDinero(0);
     setProteccion(0);
 }
 
-Character::Character(std::string _nombre, int _vida, Habitacion* _habitacionActual, std::vector <Item*> _inventario, int _ataque, int _dinero, int _proteccion){
+Character::Character(std::string _nombre, int _vida, Room* _RoomActual, std::vector <Item*> _inventario, int _ataque, int _dinero, int _proteccion){
     setNombre(_nombre);
     setVida(_vida);
-    setHabitacionActual(_habitacionActual);
+    setposicion(_RoomActual);
     setInventario(_inventario);
     setAtaque(_ataque);
     setDinero(_dinero);
@@ -28,8 +28,8 @@ int Character::getVida() const{
     return vida;
 }
 
-Habitacion* Character::getposicion(){
-    return habitacionActual;
+Room* Character::getposicion(){
+    return RoomActual;
 }
 
 std::vector <Item*> Character::getInventario() const{
@@ -56,8 +56,8 @@ void Character::setVida(int _vida){
     vida = _vida;
 }
 
-void Character::setposicion(Habitacion* _habitacionActual){
-    habitacionActual = _habitacionActual;
+void Character::setposicion(Room* _RoomActual){
+    RoomActual = _RoomActual;
 }
 
 void Character::setInventario(std::vector <Item*> _inventario){
@@ -108,7 +108,7 @@ void Character::imprime(){
     std::cout << "Vida: " << vida << std::endl;
     std::cout << "Ataque: " << ataque << std::endl;
     std::cout << "Proteccion: " << proteccion << std::endl; 
-    std::cout << "Habitacion actual: " << habitacionActual << std::endl;
+    std::cout << "Room actual: " << RoomActual << std::endl;
     std::cout << "Inventario: \n" << std::endl;
     Character::imprimeInventario();
 }
