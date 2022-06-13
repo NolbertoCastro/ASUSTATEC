@@ -112,3 +112,18 @@ void Character::imprime(){
     std::cout << "Inventario: \n" << std::endl;
     Character::imprimeInventario();
 }
+
+bool Character::camina(std::string dir){
+    Room* voyA=RoomActual->getSalida(dir);
+    if (voyA!=nullptr && !voyA->requiereLlave()){
+        setposicion(voyA);
+        return true;
+    }
+    else if (voyA!=nullptr && voyA->requiereLlave()){
+        if (buscaItem("Llave")){
+            setposicion(voyA);
+            return true;
+        }
+    }
+    return false;
+}

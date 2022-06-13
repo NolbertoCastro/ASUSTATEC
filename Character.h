@@ -32,6 +32,7 @@ class Character{
         void setAtaque(int);
         void setDinero(int);
         void setProteccion(int);
+        bool camina(std::string);
 
         void agregarItem(Item*);
 
