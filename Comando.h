@@ -1,4 +1,5 @@
-#pragma once
+#ifndef COMANDO_H
+#define COMANDO_H
 #include <iostream>
 
 class Comando
@@ -16,3 +17,5 @@ class Comando
         std::string comando;
         std::string segPalabra;
 };
+
+#endif
