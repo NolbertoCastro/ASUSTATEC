@@ -3,7 +3,7 @@
 Character::Character(){
     setNombre(" ");
     setVida(0);
-    setposicion(RoomActual);
+    setPosicion(RoomActual);
     setInventario(inventario);
     setAtaque(0);
     setDinero(0);
@@ -13,7 +13,7 @@ Character::Character(){
 Character::Character(std::string _nombre, int _vida, Room* _RoomActual, std::vector <Item*> _inventario, int _ataque, int _dinero, int _proteccion){
     setNombre(_nombre);
     setVida(_vida);
-    setposicion(_RoomActual);
+    setPosicion(_RoomActual);
     setInventario(_inventario);
     setAtaque(_ataque);
     setDinero(_dinero);
@@ -28,7 +28,7 @@ int Character::getVida() const{
     return vida;
 }
 
-Room* Character::getposicion(){
+Room* Character::getPosicion(){
     return RoomActual;
 }
 
@@ -56,7 +56,7 @@ void Character::setVida(int _vida){
     vida = _vida;
 }
 
-void Character::setposicion(Room* _RoomActual){
+void Character::setPosicion(Room* _RoomActual){
     RoomActual = _RoomActual;
 }
 
@@ -113,15 +113,24 @@ void Character::imprime(){
     Character::imprimeInventario();
 }
 
+bool Character::buscaItem(std::string cosa){
+    for(int i=0; i< inventario.size(); i++){
+        if (inventario[i]->getDescripcion()==cosa){
+            return true;
+        }
+    }
+    return false;
+}
+
 bool Character::camina(std::string dir){
-    Room* voyA=RoomActual->getSalida(dir);
+    Room* voyA= RoomActual->getSalida(dir);
     if (voyA!=nullptr && !voyA->requiereLlave()){
-        setposicion(voyA);
+        setPosicion(voyA);
         return true;
     }
     else if (voyA!=nullptr && voyA->requiereLlave()){
         if (buscaItem("Llave")){
-            setposicion(voyA);
+            setPosicion(voyA);
             return true;
         }
     }

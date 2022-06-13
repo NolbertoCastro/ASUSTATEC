@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include "Item.h"
+#include "Villano.h"
 
 class Room {
     public:
@@ -13,6 +14,7 @@ class Room {
         Room* getSalida(std::string);
         int numSalida(std::string);
         void setSalidas(Room*, Room*, Room*, Room*);
+        void setVillano(Villano*);
         Item* getItem(int);
         void sacaItem(int);
         void agregaItem(Item*);
@@ -24,5 +26,6 @@ class Room {
         std::vector<Item*> cosas;
         Room* salidas[4];
         bool tieneLlave;
+        Villano* v1;
 };
 #endif //ROOM_H
