@@ -20,7 +20,7 @@ class Game {
     private:
         Parser parser;
         Character* personaje;
-        Room *Pasillo, *Pasillo2, *Pasillo3, *Elevador, *Banio, *Salon;
+        Room *Pasillo, *Pasillo2, *Pasillo3, *Elevador, *Banio, *Salon, *Oficina;
         Item *pocion, *libro, *monedas, *llave; 
 };
 #endif //GAME_H

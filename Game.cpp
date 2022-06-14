@@ -19,12 +19,20 @@ void Game::creaComandos(){
 y los configura (cuartos sus salidas y que objetos hay en cada room)*/
 void Game::creaElementos(){
     Pasillo = new Room("Pasillo1", false);
-    Pasillo2 = new Room("Pasillo1", false);
-    Pasillo3 = new Room("Pasillo1", false);
-    Elevador = new Room("Pasillo1", true);
-    Banio = new Room("Pasillo1", false);
-    Salon = new Room("Pasillo1", false);
+    Pasillo2 = new Room("Pasillo2", false);
+    Pasillo3 = new Room("Pasillo3", false);
+    Elevador = new Room("Elevador", true);
+    Banio = new Room("Banio", false);
+    Salon = new Room("Salon", false);
+    Oficina = new Room("Oficina", false);
     personaje=new Character("Conserje", 150, Pasillo, 30 , 800, 1);
+
+    Pasillo->setSalidas(Pasillo2,nullptr,nullptr,Banio);
+    Pasillo2->setSalidas(Pasillo3,Pasillo,nullptr,Salon);
+    Pasillo3->setSalidas(nullptr,Pasillo2,Elevador,Oficina);
+    Banio->setSalidas(nullptr,nullptr,Pasillo,nullptr);
+    Salon->setSalidas(nullptr,nullptr,Pasillo2,nullptr);
+    Oficina->setSalidas(nullptr,nullptr,Pasillo3,nullptr);
     
     // sala=new Room("Sala de la casa, totalmente amueblada", false);
     // comedor=new Room("Comedor con mesa para 8 personas", false);
