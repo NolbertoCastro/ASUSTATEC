@@ -22,8 +22,6 @@ void TomaComando::ejecuta(){
         }
         else{
             std::cout<< "Ese objeto no se encuentra en esta habitacion..."<<std::endl;
-            std::cout << "Recuerda tu estas aqui: " << std::endl;
-            actual->descripcionLarga();
         }
     }
 }
