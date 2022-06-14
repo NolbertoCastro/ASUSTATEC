@@ -11,7 +11,6 @@ void Ataca::ejecuta(){
     std::cout << "Tu contricantes es: " << Personaje->getNombre() << std::endl;
     std::cout << "Daño: " << std::to_string(Personaje->getAtaque()) << "Protección: " << std::to_string(Personaje->getProteccion()) << std::endl;
     imprimevida(Personaje);
-
 }
 
 void Ataca::imprimevida(Character* per){
