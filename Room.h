@@ -21,7 +21,6 @@ class Room {
         int buscaItem(std::string);
         void descripcionLarga();
         bool requiereLlave();
-        // Character* getCharacter();
     private:
         std::string descripcion;
         std::vector<Item*> cosas;
