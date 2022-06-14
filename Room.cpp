@@ -84,6 +84,10 @@ int Room::numSalida(std::string dir){
     return -1;
 }
 
-// Character* Room::getCharacter(){
-//     return nullptr;
-// }
+NPC* Room::getNPC(){
+    return NPC1;
+}
+
+void Room::setNPC(NPC* _NPc){
+    NPC1 = _NPc;
+}

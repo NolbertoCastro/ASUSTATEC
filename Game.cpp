@@ -14,7 +14,7 @@ void Game::creaComandos(){
     comandos->agregaComando("ayuda", new AyudaComando(comandos));
     comandos->agregaComando("ImprimeMapa", new ImprimeMapa(personaje));
     comandos->agregaComando("inventario", new Inventario(personaje));
-    // comandos->agregaComando("Ataca", new Ataca(personaje));
+    comandos->agregaComando("Atacar", new Ataca(personaje));
 }
 
 /*crea todos los elementos que están presentes en el juego 
@@ -25,7 +25,7 @@ void Game::creaElementos(){
     Pasillo3 = new Room("Pasillo3, no hay nada", false);
     Elevador = new Room("Elevador", true);
     Banio = new Room("Banio, hay una pluma y un Starbucks", false);
-    Salon = new Room("Salon, hay una nota", false);
+    Salon = new Room("Salon, hay una nota y hace frio, hay un Teus Sanatico en el cuarto, si quieres atacarlo y ganar una recompensa escribe Atacar", false);
     Oficina = new Room("Oficina, no hay nada", false);
     personaje=new Character("Conserje", 150, Pasillo, 30 , 800, 1);
 
@@ -37,6 +37,8 @@ void Game::creaElementos(){
     Salon->setSalidas(nullptr,nullptr,Pasillo2,nullptr);
     Oficina->setSalidas(nullptr,nullptr,Pasillo3,nullptr);
     Banio->agregaItem(S1);
+    Teus = new NPC("Teus", 20, 5, 1);
+    Salon->setNPC(Teus);
 
     // sala=new Room("Sala de la casa, totalmente amueblada", false);
     // comedor=new Room("Comedor con mesa para 8 personas", false);

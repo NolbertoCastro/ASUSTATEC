@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Comando.h"
 #include "Character.h"
+#include "NPC.h"
 
 class Ataca: public Comando{
     public:
@@ -11,8 +12,9 @@ class Ataca: public Comando{
         Ataca(Character*);
         void ejecuta();
         void imprimevida(Character*);
+        void imprimevidaNPC(NPC*);
     private:
-        Character* Personaje;
+        NPC* Personaje;
         Character* Conserje;
 };
 #endif
