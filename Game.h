@@ -5,6 +5,7 @@
 #include "Room.h"
 #include "DesplazaComando.h"
 #include "AyudaComando.h"
+#include "ImprimeMapa.h"
 #include "TomaComando.h"
 #include "Parser.h"
 #include "Starbucks.h"
@@ -20,7 +21,7 @@ class Game {
     private:
         Parser parser;
         Character* personaje;
-        Room *sala, *comedor, *jardin;
+        Room *Pasillo, *Pasillo2, *Pasillo3, *Elevador, *Banio, *Salon;
         Item *pocion, *libro, *monedas, *llave; 
 };
 #endif //GAME_H

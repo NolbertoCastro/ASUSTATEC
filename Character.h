@@ -15,7 +15,7 @@ class Character{
         std::vector <Item*> inventario;
     public:
         Character();
-        Character(std::string, int, Room*, std::vector <Item*>, int, int, int);
+        Character(std::string, int, Room*, int, int, int);
 
         std::string getNombre() const;
         int getVida() const;

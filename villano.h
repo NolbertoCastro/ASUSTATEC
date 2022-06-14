@@ -12,7 +12,7 @@ class Villano:public Character{
 
     public:
         Villano();
-        Villano(std::string, int, Room*, std::vector <Item*>, int, int, int, Item);
+        Villano(std::string, int, Room*, int, int, int, Item);
 
         Item getRecompensa() const;
 

@@ -12,39 +12,34 @@ void Game::creaComandos(){
     comandos->agregaComando("Mover", new DesplazaComando(personaje));
     comandos->agregaComando("toma", new TomaComando(personaje));
     comandos->agregaComando("ayuda", new AyudaComando(comandos));
+    comandos->agregaComando("ImprimeMapa", new ImprimeMapa(personaje));
 }
 
 /*crea todos los elementos que están presentes en el juego 
 y los configura (cuartos sus salidas y que objetos hay en cada room)*/
 void Game::creaElementos(){
-    //Cuartos del Juego
-    Room* Pasillo = new Room("Pasillo1", false);
-    Room* Pasillo2 = new Room("Pasillo2", false);
-    Room* Pasillo3 = new Room("Pasillo3", false);
-    Room* Oficina = new Room("Oficina", false);
-    Room* Elevador = new Room("Elevador", true);
-    Room* Salon = new Room("Salon", false);
-    Room* WC = new Room("Baño", false);
-
-    vector <Item*> inventario;
-    inventario.push_back(new Starbucks());
-    personaje = new Character("Conserje", 150, Pasillo,inventario,30, 1500, 0.5);
-
+    Pasillo = new Room("Pasillo1", false);
+    Pasillo2 = new Room("Pasillo1", false);
+    Pasillo3 = new Room("Pasillo1", false);
+    Elevador = new Room("Pasillo1", true);
+    Banio = new Room("Pasillo1", false);
+    Salon = new Room("Pasillo1", false);
+    personaje=new Character("Conserje", 150, Pasillo, 30 , 800, 1);
     
-    
-
-
-    pocion=new Item("pocion", 50);
-    libro=new Item("libro", 15);
-    monedas=new Item("Oro", 100);
-    llave=new Item("Llave", 0);
-    //Conserje->setHabitacionActual(sala);
-    sala->agregaItem(libro);
-    sala->agregaItem(monedas);
-    comedor->agregaItem(pocion);
-    comedor->agregaItem(llave);
-    sala->setSalidas(comedor, nullptr, nullptr, nullptr);
-    comedor->setSalidas(nullptr, sala, jardin, nullptr);
+    // sala=new Room("Sala de la casa, totalmente amueblada", false);
+    // comedor=new Room("Comedor con mesa para 8 personas", false);
+    // jardin=new Room("Jardin!!! Estas fuera de la casa", true);
+    // pocion=new Item("pocion", 50);
+    // libro=new Item("libro", 15);
+    // monedas=new Item("Oro", 100);
+    // llave=new Item("Llave", 0);
+    // //personaje->setHabitacionActual(sala);
+    // sala->agregaItem(libro);
+    // sala->agregaItem(monedas);
+    // comedor->agregaItem(pocion);
+    // comedor->agregaItem(llave);
+    // sala->setSalidas(comedor, nullptr, nullptr, nullptr);
+    // comedor->setSalidas(nullptr, sala, jardin, nullptr);
 }
 
 void Game::imprimeBienvenida(){
@@ -110,30 +105,31 @@ void Game::imprimeBienvenida(){
     std::cout << "Mover S = Abajo" << std::endl;
     std::cout << "Mover O = Izquierda" << std::endl;
     std::cout << "Mover E = Derecha" << std::endl;
+    std::cout << "ImprimeMapa = Te despliega el mapa y tu posición actual" << std::endl;
     std::cout << "Si necesitas ayuda teclea la palabra: ayuda\n" << std::endl;
 }
 
 void Game::play(){
     imprimeBienvenida();
-        bool finished = false;
-        while (!finished) {
-            Comando* comando = parser.generaComando();
-            finished = procesaComando(comando);
-        }
-        std::cout << "Gracias por jugar asustatec, NOS VEMOS EN LA NOCHE MUAHAHAHAHA!!!" << std::endl;
+    bool finished = false;
+    while (!finished) {
+        Comando* comando = parser.generaComando();
+        finished = procesaComando(comando);
+    }
+    std::cout << "Gracias por jugar este juego de aventura" << std::endl;
 }
 
 bool Game::procesaComando(Comando* instr){
-        bool salio = false;
-        instr->ejecuta(); // se esta ejecutando polimorfismo
-           
-        if(personaje->getPosicion()==jardin){
-            if(personaje->buscaItem("Llave")){
-                salio = true;
-            }
-            else{
-                personaje->setPosicion(comedor);
-            }
+    bool salio = false;
+    instr->ejecuta(); // se esta ejecutando polimorfismo
+    
+    if(personaje->getPosicion()==Elevador){
+        if(personaje->buscaItem("Llave")){
+            salio = true;
         }
-     return salio;
+        else{
+            personaje->setPosicion(Pasillo3);
+        }
+    }
+return salio;
 }
