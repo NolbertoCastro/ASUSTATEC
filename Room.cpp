@@ -69,16 +69,16 @@ void Room::descripcionLarga(){
 }
 
 int Room::numSalida(std::string dir){
-    if (dir=="norte"){
+    if (dir=="N"){
         return 0;
     }
-    if (dir=="sur"){
+    if (dir=="S"){
         return 1;
     }
-    if (dir=="este"){
+    if (dir=="E"){
         return 2;
     }
-    if (dir=="oeste"){
+    if (dir=="O"){
         return 3;
     }
     return -1;
