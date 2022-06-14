@@ -1,17 +1,18 @@
-// #ifndef ATACA_H
-// #define ATACA_H
+#ifndef ATACA_H
+#define ATACA_H
 
-// #include <iostream>
-// #include "Comando.h"
-// #include "Character.h"
+#include <iostream>
+#include "Comando.h"
+#include "Character.h"
 
-// class Ataca: public Comando{
-//     public:
-//         Ataca(Character*);
-//         void ejecuta();
-//         void imprimevida(Character*);
-//     private:
-//         Character* Personaje;
-//         Character* Conserje;
-// };
-// #endif
+class Ataca: public Comando{
+    public:
+        Ataca();
+        Ataca(Character*);
+        void ejecuta();
+        void imprimevida(Character*);
+    private:
+        Character* Personaje;
+        Character* Conserje;
+};
+#endif
