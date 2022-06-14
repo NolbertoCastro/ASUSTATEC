@@ -97,7 +97,8 @@ void Character::consultaItem(std::string item){
 
 void Character::imprimeInventario(){
     for(int i =0; i < inventario.size(); i++){
-        inventario[i]->imprimirItem();    
+        inventario[i]->imprimirItem();  
+        std::cout << "\n<---------------------------->\n" << std::endl;  
     }
 }
 

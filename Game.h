@@ -7,6 +7,7 @@
 #include "AyudaComando.h"
 #include "ImprimeMapa.h"
 #include "TomaComando.h"
+#include "Inventario.h"
 // #include "Ataca.h"
 #include "Parser.h"
 #include "Starbucks.h"

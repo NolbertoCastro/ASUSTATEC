@@ -13,6 +13,7 @@ void Game::creaComandos(){
     comandos->agregaComando("toma", new TomaComando(personaje));
     comandos->agregaComando("ayuda", new AyudaComando(comandos));
     comandos->agregaComando("ImprimeMapa", new ImprimeMapa(personaje));
+    comandos->agregaComando("inventario", new Inventario(personaje));
     // comandos->agregaComando("Ataca", new Ataca(personaje));
 }
 
@@ -23,7 +24,7 @@ void Game::creaElementos(){
     Pasillo2 = new Room("Pasillo2, no hay nada", false);
     Pasillo3 = new Room("Pasillo3, no hay nada", false);
     Elevador = new Room("Elevador", true);
-    Banio = new Room("Banio, hay una pluma y un starbucks", false);
+    Banio = new Room("Banio, hay una pluma y un Starbucks", false);
     Salon = new Room("Salon, hay una nota", false);
     Oficina = new Room("Oficina, no hay nada", false);
     personaje=new Character("Conserje", 150, Pasillo, 30 , 800, 1);
@@ -88,23 +89,15 @@ void Game::imprimeBienvenida(){
 
     std::cout << "\n***************" << std::endl;
     std::cout << "*░░░**░░░**░░░*" << std::endl;
-    std::cout << "*░1░░░░░░░░░E░*" << std::endl;
+    std::cout << "*░O░░░░3░░░░E░*" << std::endl;
     std::cout << "*░░░**░░░**░░░*" << std::endl;
     std::cout << "******░░░******" << std::endl;
     std::cout << "*░░░**░░░*" << std::endl;
-    std::cout << "*░2░░░░░░*" << std::endl;
+    std::cout << "*░S░░░░2░*" << std::endl;
     std::cout << "*░░░**░░░*" << std::endl;
     std::cout << "******░░░*" << std::endl;
     std::cout << "*░░░**░░░*" << std::endl;
-    std::cout << "*░3░░░░░░*" << std::endl;
-    std::cout << "*░░░**░░░*" << std::endl;
-    std::cout << "******░░░*" << std::endl;
-    std::cout << "*░░░**░░░*" << std::endl;
-    std::cout << "*░4░░░░░░*" << std::endl;
-    std::cout << "*░░░**░░░*" << std::endl;
-    std::cout << "******░░░*" << std::endl;
-    std::cout << "*░░░**░░░*" << std::endl;
-    std::cout << "*░5░░░░░░*" << std::endl;
+    std::cout << "*░B░░░░1░*" << std::endl;
     std::cout << "*░░░**░░░*" << std::endl;
     std::cout << "**********" << std::endl;
 
