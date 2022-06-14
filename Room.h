@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include "Item.h"
+// #include "Character.h"
 
 class Room {
     public:
@@ -13,6 +14,7 @@ class Room {
         Room* getSalida(std::string);
         int numSalida(std::string);
         void setSalidas(Room*, Room*, Room*, Room*);
+        // Character* getCharacter();
         Item* getItem(int);
         void sacaItem(int);
         void agregaItem(Item*);

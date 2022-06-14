@@ -9,31 +9,34 @@ Game::Game(){
 
 void Game::creaComandos(){
     ListaPalabras* comandos=parser.getComandos();
-    comandos->agregaComando("Mover", new DesplazaComando(personaje));
+    comandos->agregaComando("mover", new DesplazaComando(personaje));
     comandos->agregaComando("toma", new TomaComando(personaje));
     comandos->agregaComando("ayuda", new AyudaComando(comandos));
     comandos->agregaComando("ImprimeMapa", new ImprimeMapa(personaje));
+    // comandos->agregaComando("Ataca", new Ataca(personaje));
 }
 
 /*crea todos los elementos que están presentes en el juego 
 y los configura (cuartos sus salidas y que objetos hay en cada room)*/
 void Game::creaElementos(){
-    Pasillo = new Room("Pasillo1", false);
-    Pasillo2 = new Room("Pasillo2", false);
-    Pasillo3 = new Room("Pasillo3", false);
+    Pasillo = new Room("Pasillo1, no hay nada", false);
+    Pasillo2 = new Room("Pasillo2, no hay nada", false);
+    Pasillo3 = new Room("Pasillo3, no hay nada", false);
     Elevador = new Room("Elevador", true);
-    Banio = new Room("Banio", false);
-    Salon = new Room("Salon", false);
-    Oficina = new Room("Oficina", false);
+    Banio = new Room("Banio, hay una pluma y un starbucks", false);
+    Salon = new Room("Salon, hay una nota", false);
+    Oficina = new Room("Oficina, no hay nada", false);
     personaje=new Character("Conserje", 150, Pasillo, 30 , 800, 1);
 
+    S1 = new Starbucks();
     Pasillo->setSalidas(Pasillo2,nullptr,nullptr,Banio);
     Pasillo2->setSalidas(Pasillo3,Pasillo,nullptr,Salon);
     Pasillo3->setSalidas(nullptr,Pasillo2,Elevador,Oficina);
     Banio->setSalidas(nullptr,nullptr,Pasillo,nullptr);
     Salon->setSalidas(nullptr,nullptr,Pasillo2,nullptr);
     Oficina->setSalidas(nullptr,nullptr,Pasillo3,nullptr);
-    
+    Banio->agregaItem(S1);
+
     // sala=new Room("Sala de la casa, totalmente amueblada", false);
     // comedor=new Room("Comedor con mesa para 8 personas", false);
     // jardin=new Room("Jardin!!! Estas fuera de la casa", true);

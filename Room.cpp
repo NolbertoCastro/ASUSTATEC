@@ -83,3 +83,7 @@ int Room::numSalida(std::string dir){
     }
     return -1;
 }
+
+// Character* Room::getCharacter(){
+//     return nullptr;
+// }
