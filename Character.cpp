@@ -4,17 +4,15 @@ Character::Character(){
     setNombre(" ");
     setVida(0);
     setPosicion(RoomActual);
-    setInventario(inventario);
     setAtaque(0);
     setDinero(0);
     setProteccion(0);
 }
 
-Character::Character(std::string _nombre, int _vida, Room* _RoomActual, std::vector <Item*> _inventario, int _ataque, int _dinero, int _proteccion){
+Character::Character(std::string _nombre, int _vida, Room* _RoomActual, int _ataque, int _dinero, int _proteccion){
     setNombre(_nombre);
     setVida(_vida);
     setPosicion(_RoomActual);
-    setInventario(_inventario);
     setAtaque(_ataque);
     setDinero(_dinero);
     setProteccion(_proteccion);
