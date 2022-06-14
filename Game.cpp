@@ -9,12 +9,12 @@ Game::Game(){
 
 void Game::creaComandos(){
     ListaPalabras* comandos=parser.getComandos();
-    comandos->agregaComando("mover", new DesplazaComando(personaje));
-    comandos->agregaComando("toma", new TomaComando(personaje));
-    comandos->agregaComando("ayuda", new AyudaComando(comandos));
+    comandos->agregaComando("Mover", new DesplazaComando(personaje));
+    comandos->agregaComando("Toma", new TomaComando(personaje));
+    comandos->agregaComando("Ayuda", new AyudaComando(comandos));
     comandos->agregaComando("ImprimeMapa", new ImprimeMapa(personaje));
-    comandos->agregaComando("inventario", new Inventario(personaje));
-    comandos->agregaComando("Atacar", new Ataca(personaje));
+    comandos->agregaComando("Inventario", new Inventario(personaje));
+    comandos->agregaComando("Ataca", new Ataca(personaje));
 }
 
 /*crea todos los elementos que están presentes en el juego 
@@ -25,7 +25,7 @@ void Game::creaElementos(){
     Pasillo3 = new Room("Pasillo3, no hay nada", false);
     Elevador = new Room("Elevador", true);
     Banio = new Room("Banio, hay una pluma y un Starbucks", false);
-    Salon = new Room("Salon, hay una nota y hace frio, hay un Teus Sanatico en el cuarto, si quieres atacarlo y ganar una recompensa escribe Atacar", false);
+    Salon = new Room("Salon, hay una nota y hace frio, hay un Teus Sanatico en el cuarto, si quieres atacarlo y ganar una recompensa escribe Ataca", false);
     Oficina = new Room("Oficina, no hay nada", false);
     personaje=new Character("Conserje", 150, Pasillo, 30 , 800, 1);
 
@@ -40,20 +40,10 @@ void Game::creaElementos(){
     Teus = new NPC("Teus", 20, 5, 1);
     Salon->setNPC(Teus);
 
-    // sala=new Room("Sala de la casa, totalmente amueblada", false);
-    // comedor=new Room("Comedor con mesa para 8 personas", false);
-    // jardin=new Room("Jardin!!! Estas fuera de la casa", true);
     // pocion=new Item("pocion", 50);
     // libro=new Item("libro", 15);
     // monedas=new Item("Oro", 100);
     // llave=new Item("Llave", 0);
-    // //personaje->setHabitacionActual(sala);
-    // sala->agregaItem(libro);
-    // sala->agregaItem(monedas);
-    // comedor->agregaItem(pocion);
-    // comedor->agregaItem(llave);
-    // sala->setSalidas(comedor, nullptr, nullptr, nullptr);
-    // comedor->setSalidas(nullptr, sala, jardin, nullptr);
 }
 
 void Game::imprimeBienvenida(){
@@ -111,6 +101,7 @@ void Game::imprimeBienvenida(){
     std::cout << "Mover S = Abajo" << std::endl;
     std::cout << "Mover O = Izquierda" << std::endl;
     std::cout << "Mover E = Derecha" << std::endl;
+    std::cout << "Ataca = Atacas al personaje en cuestion en el cuarto" << std::endl;
     std::cout << "ImprimeMapa = Te despliega el mapa y tu posición actual" << std::endl;
     std::cout << "Si necesitas ayuda teclea la palabra: ayuda\n" << std::endl;
 }

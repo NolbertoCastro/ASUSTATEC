@@ -14,7 +14,7 @@ class Ataca: public Comando{
         void imprimevida(Character*);
         void imprimevidaNPC(NPC*);
     private:
-        NPC* Personaje;
-        Character* Conserje;
+        NPC* Enemigo;
+        Character* Personaje;
 };
 #endif

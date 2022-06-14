@@ -5,7 +5,6 @@ NPC::NPC(){
     setVida(10);
     setDano(1);
     setProteccion(1);
-
 }
 
 NPC::NPC(std::string nombre, int vida, int dano, int proteccion){
