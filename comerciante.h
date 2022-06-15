@@ -12,7 +12,7 @@ class Comerciante:public NPC{
 
     public:
         Comerciante();
-        Comerciante(std::string, int, int, int);
+        Comerciante(std::string, int, int, int, int);
 
         Item* getItem(std::string);
         void agregaItem(Item*);

@@ -17,9 +17,19 @@ Comando* Parser::generaComando(){
     sstr >> primera;
     sstr >> segunda;
     sstr.ignore();
-    Comando* com=comandos->getComando(primera);
-    if(com){
+
+    // Excepción si el comando es erroneo
+    try  {
+       Comando* com=comandos->getComando(primera);
+       if(com){
         com->setSegPalabra(segunda);
+        return com;
+       } else {
+        throw com;
+       }
     }
-    return com;
+    catch (Comando* error)  {
+        std::cout << "Ingresaste un valor erroneo\n";
+        std::cout << "Ingresa un comando valido por favor\n";
+    }
 }

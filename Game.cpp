@@ -28,15 +28,25 @@ void Game::creaElementos(){
     Elevador = new Room("Elevador", true);
     Banio = new Room("Banio, hay una pluma y un Starbucks", false);
     Salon = new Room("Salon, hay una nota y hace frio, hay un Teus Sanatico en el cuarto, si quieres atacarlo y ganar una recompensa escribe Ataca", false);
-    Oficina = new Room("Oficina, hay un fantasma que te puede vender cosas, Una pluma en 500 y Una experiencia (Starbucks) en 600", false);
-    personaje=new Character("Conserje", 20, Pasillo, 3 , 800, 1);
-
+    Oficina = new Room("Oficina, hay un enemigo frio y calculador llamado Agente47 si quieres enfrentarlo y ganar una recompensa escribe Ataca", false);
+    //hay un fantasma que te puede vender cosas, Una pluma en 500 y Una experiencia (Starbucks) en 600
+    
 
     //Definimos Objetos
     llave=new Item("Llave", "Te permitirá utilizar el elevador y salir del juego", 0);
     P1 = new Pluma();
     S1 = new Starbucks();
+    S2 = new Starbucks();
 
+    //Definimos personajes
+    Comercio = new Comerciante("Comerciante", 0, 0, 0, 0);
+    Teus = new NPC("Teus Satanico", 30, 5, 1, 30);
+    Agente47 = new NPC("AGENTE 47", 10, 3, 1, 10);
+    personaje=new Character("Conserje", 20, Pasillo, 3 , 800, 1, 20);
+
+    //Definimos Recompenas
+    Teus->setRecompensa(llave);
+    Agente47->setRecompensa(S2);
     //Definimos salidas
     Pasillo->setSalidas(Pasillo2,nullptr,nullptr,Banio);
     Pasillo2->setSalidas(Pasillo3,Pasillo,nullptr,Salon);
@@ -46,11 +56,10 @@ void Game::creaElementos(){
     Oficina->setSalidas(nullptr,nullptr,Pasillo3,nullptr);
     Banio->agregaItem(S1);
     Banio->agregaItem(P1);
-    Teus = new NPC("Teus Satanico", 30, 5, 1);
-    Teus->setRecompensa(llave);
+    
+    // Ponemos NPC'S en sus cuartos
     Salon->setNPC(Teus);
-    Comercio = new Comerciante("Comerciante", 0, 0, 0);
-    Oficina->setNPC(Comercio);
+    Oficina->setNPC(Agente47);
 }
 
 void Game::imprimeBienvenida(){

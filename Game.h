@@ -29,8 +29,8 @@ class Game {
         Character* personaje;
         Room *Pasillo, *Pasillo2, *Pasillo3, *Elevador, *Banio, *Salon, *Oficina;
         Item *llave; 
-        Starbucks *S1;
+        Starbucks *S1, *S2;
         Pluma *P1;
-        NPC *Teus, *Comercio;
+        NPC *Teus, *Comercio, *Agente47;
 };
 #endif //GAME_H

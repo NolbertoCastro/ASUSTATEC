@@ -7,22 +7,24 @@ Character::Character(){
     setAtaque(0);
     setDinero(0);
     setProteccion(0);
+    setVIDAC(0);
 }
 
-Character::Character(std::string _nombre, int _vida, Room* _RoomActual, int _ataque, int _dinero, int _proteccion){
+Character::Character(std::string _nombre, int _vida, Room* _RoomActual, int _ataque, int _dinero, int _proteccion, int vidaC){
     setNombre(_nombre);
     setVida(_vida);
     setPosicion(_RoomActual);
     setAtaque(_ataque);
     setDinero(_dinero);
     setProteccion(_proteccion);
+    setVIDAC(vidaC);
 }
 
 std::string Character::getNombre() const{
     return nombre;
 }
 
-int Character::getVida() const{
+int Character::getVida(){
     return vida;
 }
 
@@ -154,4 +156,12 @@ void Character::expulsarItem(std::string item){
             }
         }
     }
+}
+
+void Character::setVIDAC(int _vidac){
+    VIDAC = _vidac;
+}
+
+int Character::getVIDAC(){
+    return VIDAC;
 }

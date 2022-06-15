@@ -5,13 +5,15 @@ NPC::NPC(){
     setVida(10);
     setDano(1);
     setProteccion(1);
+    setVIDAC(10);
 }
 
-NPC::NPC(std::string nombre, int vida, int dano, int proteccion){
+NPC::NPC(std::string nombre, int vida, int dano, int proteccion, int _vidac){
     setNombre(nombre);
     setVida(vida);
     setDano(dano);
     setProteccion(proteccion);
+    setVIDAC(_vidac);
 }
 void NPC::setNombre(std::string _nombre){
     nombre = _nombre;
@@ -45,4 +47,12 @@ Item* NPC::getRecompensa(){
 
 void NPC::setRecompensa(Item* _recomp){
     Recompensa = _recomp;
+}
+
+void NPC::setVIDAC(int vidac){
+    VIDAC = vidac;
+}
+
+int NPC::getVIDAC(){
+    return VIDAC;
 }

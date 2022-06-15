@@ -8,7 +8,7 @@
 class Villano: public NPC{
     public:
         Villano();
-        Villano(std::string, int, int, int, Item*);
+        Villano(std::string, int, int, int, Item*, int);
 
         void setRecompensa(Item*);
         Item* getRecompensa();

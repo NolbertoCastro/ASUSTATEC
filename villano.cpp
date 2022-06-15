@@ -3,11 +3,7 @@
 Villano::Villano(){
 }
 
-Villano::Villano(std::string nombre, int vida, int dano, int proteccion, Item* recompensa):NPC(nombre, vida, dano, proteccion){
-    setNombre(nombre);
-    setVida(vida);
-    setDano(dano);
-    setProteccion(proteccion);
+Villano::Villano(std::string nombre, int vida, int dano, int proteccion, Item* recompensa, int VIDAC):NPC(nombre, vida, dano, proteccion, VIDAC){
 }
 
 Item* Villano::getRecompensa(){
