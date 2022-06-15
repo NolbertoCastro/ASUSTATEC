@@ -3,22 +3,18 @@
 
 #include <iostream>
 #include "Item.h"
-#include "Room.h"
-#include "Character.h"
+#include "NPC.h"
 
-class Villano:public Character{
-    private:
-        Item recompensa;
-
+class Villano: public NPC{
     public:
         Villano();
-        Villano(std::string, int, Room*, int, int, int, Item);
+        Villano(std::string, int, int, int, Item*);
 
-        Item getRecompensa() const;
-
-        void setRecompensa(Item);
-
-        int ataca();
+        void setRecompensa(Item*);
+        Item* getRecompensa();
+        
+    private:
+        Item* recompensa;
 };
 
 #endif

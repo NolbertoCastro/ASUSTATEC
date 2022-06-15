@@ -18,12 +18,9 @@ void TomaComando::ejecuta(){
             jugador->agregarItem(paraJugador);
             actual->sacaItem(num);
             std::cout << "Ahora tienes en tu poder: "<< std::endl;
-            std::cout << paraJugador->getDescripcion() << std::endl;
-        }
-        else{
+            std::cout << paraJugador->getNombre() << std::endl;
+        }else{
             std::cout<< "Ese objeto no se encuentra en esta habitacion..."<<std::endl;
-            std::cout << "Recuerda tu estas aqui: " << std::endl;
-            actual->descripcionLarga();
         }
     }
 }

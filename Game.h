@@ -7,7 +7,11 @@
 #include "AyudaComando.h"
 #include "ImprimeMapa.h"
 #include "TomaComando.h"
+#include "Inventario.h"
+#include "Ataca.h"
 #include "Parser.h"
+#include "Starbucks.h"
+#include "NPC.h"
 
 class Game {
     public:
@@ -22,5 +26,7 @@ class Game {
         Character* personaje;
         Room *Pasillo, *Pasillo2, *Pasillo3, *Elevador, *Banio, *Salon, *Oficina;
         Item *pocion, *libro, *monedas, *llave; 
+        Starbucks *S1;
+        NPC *Teus, *Comerciante;
 };
 #endif //GAME_H

@@ -3,19 +3,17 @@
 Villano::Villano(){
 }
 
-Villano::Villano(std::string _nombre, int _vida, Room* _habitacionActual, int _ataque, int _dinero, int _proteccion, Item _recompensa):Character(_nombre, _vida, _habitacionActual, _ataque, _dinero, _proteccion){
-    recompensa = _recompensa;
+Villano::Villano(std::string nombre, int vida, int dano, int proteccion, Item* recompensa):NPC(nombre, vida, dano, proteccion){
+    setNombre(nombre);
+    setVida(vida);
+    setDano(dano);
+    setProteccion(proteccion);
 }
 
-Item Villano::getRecompensa() const{
+Item* Villano::getRecompensa(){
     return recompensa;
 }
 
-void Villano::setRecompensa(Item _recompensa){
+void Villano::setRecompensa(Item* _recompensa){
     recompensa = _recompensa;
-}
-
-int Villano::ataca(){
-    return 0;
-    
 }

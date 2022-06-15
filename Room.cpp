@@ -49,7 +49,7 @@ void Room::agregaItem(Item* cosita){
 }
 int Room::buscaItem(std::string que){
     for(int i=0; i<cosas.size();i++){
-        if(cosas[i]->getDescripcion()==que){
+        if(cosas[i]->getNombre()==que){
             return i; //devuelve la posición donde está ese objeto
         }
     }
@@ -82,4 +82,12 @@ int Room::numSalida(std::string dir){
         return 3;
     }
     return -1;
+}
+
+NPC* Room::getNPC(){
+    return NPC1;
+}
+
+void Room::setNPC(NPC* _NPc){
+    NPC1 = _NPc;
 }
