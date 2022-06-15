@@ -10,8 +10,8 @@ void Ataca::ejecuta(){
     std::cout << "Nos impresiona tu valentia, pero ahora es tiempo para luchar" << std::endl;
     std::cout << "Tu contricantes es: " << Enemigo->getNombre() << std::endl;
     std::cout << "Daño: " << std::to_string(Enemigo->getDano()) << "Protección: " << std::to_string(Enemigo->getProteccion()) << std::endl;
-    Ataca::imprimevida(Personaje);
-    Ataca::imprimevidaNPC(Enemigo);
+    // Ataca::imprimevida(Personaje);
+    // Ataca::imprimevidaNPC(Enemigo);
 }
 
 void Ataca::imprimevidaNPC(NPC* npc){

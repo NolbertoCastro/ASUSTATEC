@@ -1,7 +1,6 @@
 #include "ImprimeMapa.h"
 
 ImprimeMapa::ImprimeMapa(Character* personaje):Comando("ImprimeMapa", ""){
-
     Personaje = personaje;
 }
 

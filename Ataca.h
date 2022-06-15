@@ -8,7 +8,6 @@
 
 class Ataca: public Comando{
     public:
-        Ataca();
         Ataca(Character*);
         void ejecuta();
         void imprimevida(Character*);
@@ -17,4 +16,5 @@ class Ataca: public Comando{
         NPC* Enemigo;
         Character* Personaje;
 };
+
 #endif
