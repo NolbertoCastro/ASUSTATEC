@@ -27,7 +27,7 @@ void Game::creaElementos(){
     Banio = new Room("Banio, hay una pluma y un Starbucks", false);
     Salon = new Room("Salon, hay una nota y hace frio, hay un Teus Sanatico en el cuarto, si quieres atacarlo y ganar una recompensa escribe Ataca", false);
     Oficina = new Room("Oficina, no hay nada", false);
-    personaje=new Character("Conserje", 150, Pasillo, 30 , 800, 1);
+    personaje=new Character("Conserje", 20, Pasillo, 3 , 800, 1);
 
     S1 = new Starbucks();
     Pasillo->setSalidas(Pasillo2,nullptr,nullptr,Banio);
@@ -37,12 +37,9 @@ void Game::creaElementos(){
     Salon->setSalidas(nullptr,nullptr,Pasillo2,nullptr);
     Oficina->setSalidas(nullptr,nullptr,Pasillo3,nullptr);
     Banio->agregaItem(S1);
-    Teus = new NPC("Teus", 20, 5, 1);
+    Teus = new NPC("Teus", 30, 5, 1);
     Salon->setNPC(Teus);
 
-    // pocion=new Item("pocion", 50);
-    // libro=new Item("libro", 15);
-    // monedas=new Item("Oro", 100);
     // llave=new Item("Llave", 0);
 }
 
