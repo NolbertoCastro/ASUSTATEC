@@ -114,7 +114,7 @@ void Character::imprime(){
 
 bool Character::buscaItem(std::string cosa){
     for(int i=0; i< inventario.size(); i++){
-        if (inventario[i]->getDescripcion()==cosa){
+        if (inventario[i]->getNombre()==cosa){
             return true;
         }
     }

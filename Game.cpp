@@ -29,6 +29,7 @@ void Game::creaElementos(){
     Oficina = new Room("Oficina, no hay nada", false);
     personaje=new Character("Conserje", 20, Pasillo, 3 , 800, 1);
 
+    llave=new Item("Llave", "Te permitirá utilizar el elevador y salir del juego", 0);
     S1 = new Starbucks();
     Pasillo->setSalidas(Pasillo2,nullptr,nullptr,Banio);
     Pasillo2->setSalidas(Pasillo3,Pasillo,nullptr,Salon);
@@ -37,10 +38,9 @@ void Game::creaElementos(){
     Salon->setSalidas(nullptr,nullptr,Pasillo2,nullptr);
     Oficina->setSalidas(nullptr,nullptr,Pasillo3,nullptr);
     Banio->agregaItem(S1);
-    Teus = new NPC("Teus", 30, 5, 1);
+    Teus = new NPC("Teus Satanico", 30, 5, 1);
+    Teus->setRecompensa(llave);
     Salon->setNPC(Teus);
-
-    // llave=new Item("Llave", 0);
 }
 
 void Game::imprimeBienvenida(){
@@ -110,7 +110,8 @@ void Game::play(){
         Comando* comando = parser.generaComando();
         finished = procesaComando(comando);
     }
-    std::cout << "Gracias por jugar este juego de aventura" << std::endl;
+    std::cout << "Gracias por jugar este juego de aventura te esperamos a la siguiente en ASUSTATEC" << std::endl;
+    std::cout << "Donde damos sustos que dan gusto" << std::endl;
 }
 
 bool Game::procesaComando(Comando* instr){

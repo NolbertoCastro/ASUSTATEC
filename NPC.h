@@ -2,6 +2,7 @@
 #define NPC_H
 
 #include <iostream>
+#include "Item.h"
 
 class NPC{
     public:
@@ -11,7 +12,8 @@ class NPC{
         void setDano(int);
         void setVida(int);
         void setProteccion(int);
-
+        Item* getRecompensa();
+        void setRecompensa(Item*);
         std::string getNombre();
         int getDano();
         int getVida();
@@ -20,6 +22,7 @@ class NPC{
     private:
         std::string nombre;
         int dano, vida, proteccion;
+        Item* Recompensa;
 
 
 };

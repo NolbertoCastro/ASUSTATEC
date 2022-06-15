@@ -38,5 +38,5 @@ void Item::setPeso(int _peso){
 
 void Item::imprimirItem(){
     std::cout << nombre << ", Peso: " << peso << std::endl;
-    std::cout << "Descripción:" << descripcion << std::endl;
+    std::cout << "Descripción: " << descripcion << std::endl;
 }

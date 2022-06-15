@@ -5,6 +5,6 @@ Inventario::Inventario(Character* personaje):Comando("ImprimeMapa", ""){
 }
 
 void Inventario::ejecuta(){
-    std::cout << "<---------INVENTARIO--------->\n" << std::endl;
+    std::cout << "\n<---------INVENTARIO--------->\n" << std::endl;
     Personaje->imprimeInventario();
 }

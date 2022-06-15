@@ -38,3 +38,11 @@ int NPC::getVida(){
 int NPC::getProteccion(){
     return proteccion;
 }
+
+Item* NPC::getRecompensa(){
+    return Recompensa;
+}
+
+void NPC::setRecompensa(Item* _recomp){
+    Recompensa = _recomp;
+}

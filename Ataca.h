@@ -12,9 +12,12 @@ class Ataca: public Comando{
         void ejecuta();
         void imprimevida(Character*);
         void imprimevidaNPC(NPC*);
+        void setAtributos();
     private:
         NPC* Enemigo;
         Character* Personaje;
+        int vidaE;
+        int vidaP;
 };
 
 #endif
