@@ -135,3 +135,12 @@ bool Character::camina(std::string dir){
     }
     return false;
 }
+Item* Character::getItem(std::string nombre){
+    for (int i = 0; i < inventario.size(); i++){
+        if (inventario[i]->getNombre() == nombre){
+            return inventario[i];
+        } else{
+            std::cout << "No cuento con un articulo de ese estilo" << std::endl;
+        }
+    }
+}

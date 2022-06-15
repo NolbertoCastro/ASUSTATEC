@@ -4,7 +4,6 @@
 #include <iostream>
 #include <vector>
 #include "Item.h"
-#include "Room.h"
 #include "NPC.h"
 
 class Comerciante:public NPC{
@@ -15,7 +14,7 @@ class Comerciante:public NPC{
         Comerciante();
         Comerciante(std::string, int, int, int);
 
-        Item* getItem(int);
+        Item* getItem(std::string);
         void agregaItem(Item*);
 };
 

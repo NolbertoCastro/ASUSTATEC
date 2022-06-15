@@ -10,9 +10,8 @@ class Pluma:public Item{
     public:
         Pluma();
         Pluma(std::string, std::string, int, int);
-
-        int getExtraDanio();
         void setExtra(int);
+        int ejecuta();
 };
 
 #endif

@@ -11,10 +11,8 @@ class Starbucks:public Item{
     public:
         Starbucks();
         Starbucks(std::string, std::string, int, int);
-
-        int getSanacion() const;
-        
         void setSanacion(int);
+        int ejecuta();
 };
 
 #endif

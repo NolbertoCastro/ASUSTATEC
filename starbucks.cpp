@@ -3,7 +3,7 @@
 Starbucks::Starbucks(){
     setNombre("Starbucks");
     setPeso(3);
-    sanacion = 0;
+    setSanacion(15);
     setDescripcion("Te brinda más vida y te da calor");
 }
 
@@ -11,10 +11,10 @@ Starbucks::Starbucks(std::string _nombre, std::string _descripcion, int _peso, i
     sanacion = _sanacion;
 }
 
-int Starbucks::getSanacion() const{
-    return sanacion;
-}
-
 void Starbucks::setSanacion(int _sanacion){
     sanacion = _sanacion;
+}
+
+int Starbucks::ejecuta(){
+    return sanacion;
 }

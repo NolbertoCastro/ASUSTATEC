@@ -24,6 +24,7 @@ class Character{
         int getAtaque() const;
         int getDinero() const;
         int getProteccion() const;
+        Item* getItem(std::string);
 
         void setNombre(std::string);
         void setVida(int);

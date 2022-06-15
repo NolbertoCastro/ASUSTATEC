@@ -15,22 +15,29 @@ void Game::creaComandos(){
     comandos->agregaComando("ImprimeMapa", new ImprimeMapa(personaje));
     comandos->agregaComando("Inventario", new Inventario(personaje));
     comandos->agregaComando("Ataca", new Ataca(personaje));
+    comandos->agregaComando("Usar", new Usar(personaje));
 }
 
 /*crea todos los elementos que están presentes en el juego 
 y los configura (cuartos sus salidas y que objetos hay en cada room)*/
 void Game::creaElementos(){
+    //Definimos Lugares
     Pasillo = new Room("Pasillo1, no hay nada", false);
     Pasillo2 = new Room("Pasillo2, no hay nada", false);
     Pasillo3 = new Room("Pasillo3, no hay nada", false);
     Elevador = new Room("Elevador", true);
     Banio = new Room("Banio, hay una pluma y un Starbucks", false);
     Salon = new Room("Salon, hay una nota y hace frio, hay un Teus Sanatico en el cuarto, si quieres atacarlo y ganar una recompensa escribe Ataca", false);
-    Oficina = new Room("Oficina, no hay nada", false);
+    Oficina = new Room("Oficina, hay un fantasma que te puede vender cosas, Una pluma en 500 y Una experiencia (Starbucks) en 600", false);
     personaje=new Character("Conserje", 20, Pasillo, 3 , 800, 1);
 
+
+    //Definimos Objetos
     llave=new Item("Llave", "Te permitirá utilizar el elevador y salir del juego", 0);
+    P1 = new Pluma();
     S1 = new Starbucks();
+
+    //Definimos salidas
     Pasillo->setSalidas(Pasillo2,nullptr,nullptr,Banio);
     Pasillo2->setSalidas(Pasillo3,Pasillo,nullptr,Salon);
     Pasillo3->setSalidas(nullptr,Pasillo2,Elevador,Oficina);
@@ -38,9 +45,12 @@ void Game::creaElementos(){
     Salon->setSalidas(nullptr,nullptr,Pasillo2,nullptr);
     Oficina->setSalidas(nullptr,nullptr,Pasillo3,nullptr);
     Banio->agregaItem(S1);
+    Banio->agregaItem(P1);
     Teus = new NPC("Teus Satanico", 30, 5, 1);
     Teus->setRecompensa(llave);
     Salon->setNPC(Teus);
+    Comercio = new Comerciante("Comerciante", 0, 0, 0);
+    Oficina->setNPC(Comercio);
 }
 
 void Game::imprimeBienvenida(){

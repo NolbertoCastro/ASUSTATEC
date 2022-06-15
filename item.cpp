@@ -40,3 +40,5 @@ void Item::imprimirItem(){
     std::cout << nombre << ", Peso: " << peso << std::endl;
     std::cout << "Descripción: " << descripcion << std::endl;
 }
+
+int Item::ejecuta(){return 0;}
