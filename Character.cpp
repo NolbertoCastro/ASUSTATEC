@@ -144,3 +144,14 @@ Item* Character::getItem(std::string nombre){
         }
     }
 }
+
+void Character::expulsarItem(std::string item){
+    for (int i = 0; i < inventario.size(); i++){
+        if (inventario[i]->getNombre() == item){
+            auto elem_to_remove = inventario.begin() + i;
+            if (elem_to_remove != inventario.end()) {
+                inventario.erase(elem_to_remove);
+            }
+        }
+    }
+}

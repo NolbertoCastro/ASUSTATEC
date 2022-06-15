@@ -11,6 +11,7 @@ void Usar::ejecuta(){
     else{
         std::string cosa = getSegPalabra();
         Item* cosita = Personaje->getItem(cosa); //veo si está en el cuarto (posicion dentro del vector)
+        Personaje->expulsarItem(cosa);
         if (cosa == cosita->getNombre()){
             if (cosa == "Starbucks"){
                 Personaje->setVida(Personaje->getVida()+cosita->ejecuta());

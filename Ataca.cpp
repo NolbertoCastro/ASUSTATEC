@@ -19,7 +19,7 @@ void Ataca::ejecuta(){
     std::cout << "Tu mero: " << Personaje->getNombre() << std::endl;
     std::cout << "Daño: " << std::to_string(Personaje->getAtaque()) << "   " << "Protección: " << std::to_string(Personaje->getProteccion()) << "\n" << std::endl;
     if (Enemigo->getVida() <= 0){
-        std::cout << "Muchas Felicidades has vencido a Teus Satanico, en recompensa te damos el siguiente premio:" << std::endl;
+        std::cout << "Muchas Felicidades has vencido a " << Enemigo->getNombre() << " en recompensa te damos el siguiente premio:" << std::endl;
         Enemigo->getRecompensa()->imprimirItem();
         Personaje->agregarItem(Enemigo->getRecompensa());
         std::cout << "Puedes ver este item en tu inventario usando el comando Inventario" << std::endl;

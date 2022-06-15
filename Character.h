@@ -25,6 +25,7 @@ class Character{
         int getDinero() const;
         int getProteccion() const;
         Item* getItem(std::string);
+        void expulsarItem(std::string);
 
         void setNombre(std::string);
         void setVida(int);
