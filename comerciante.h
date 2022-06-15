@@ -9,14 +9,14 @@
 
 class Comerciante:public NPC{
     private:
-        Item* inventario[5];
+        std::vector<Item*> Inventario;
 
     public:
         Comerciante();
-        Comerciante(std::string, int, Room*, std::vector <Item*>, int, int, int, Item*[5]);
+        Comerciante(std::string, int, int, int);
 
         Item* getItem(int);
-        Item* getTarjeta(int);
+        void agregaItem(Item*);
 };
 
 #endif
