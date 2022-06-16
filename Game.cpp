@@ -26,8 +26,8 @@ void Game::creaElementos(){
     Pasillo2 = new Room("Pasillo2, no hay nada", false);
     Pasillo3 = new Room("Pasillo3, no hay nada", false);
     Elevador = new Room("Elevador", true);
-    Banio = new Room("Banio, hay una pluma y un Starbucks", false);
-    Salon = new Room("Salon, hay una nota y hace frio, hay un Teus Sanatico en el cuarto, si quieres atacarlo y ganar una recompensa escribe Ataca", false);
+    Banio = new Room("Banio, hay una Pluma y un Starbucks", false);
+    Salon = new Room("Salon,hace frio, hay un Teus Satanico en el cuarto, si quieres atacarlo y ganar una recompensa escribe Ataca", false);
     Oficina = new Room("Oficina, hay un enemigo frio y calculador llamado Agente47 si quieres enfrentarlo y ganar una recompensa escribe Ataca", false);
     //hay un fantasma que te puede vender cosas, Una pluma en 500 y Una experiencia (Starbucks) en 600
     
@@ -113,11 +113,15 @@ void Game::imprimeBienvenida(){
     std::cout << "\nTodo con el objetivo de conseguir la tarjeta de alumno tec para acceder al elevador." << std::endl;
     std::cout << "\nPara poder desplazarte por el mapa podras usar los siguientes comandos:" << std::endl;
 
-    std::cout << "\nMover N = Arriba" << std::endl;
+    std::cout << "\nAyuda = Imprimir los comandos disponibles" << std::endl;
+    std::cout << "Mover N = Arriba" << std::endl;
     std::cout << "Mover S = Abajo" << std::endl;
     std::cout << "Mover O = Izquierda" << std::endl;
     std::cout << "Mover E = Derecha" << std::endl;
     std::cout << "Ataca = Atacas al personaje en cuestion en el cuarto" << std::endl;
+    std::cout << "Toma + Objeto = Agarrar objeto de cuarto" << std::endl;
+    std::cout << "Usar + Objeto = Utilizar un objeto del inventario" << std::endl;
+    std::cout << "Inventario = Te imprime tu inventario" << std::endl;
     std::cout << "ImprimeMapa = Te despliega el mapa y tu posición actual" << std::endl;
     std::cout << "Si necesitas ayuda teclea la palabra: ayuda\n" << std::endl;
 }
