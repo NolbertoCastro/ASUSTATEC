@@ -18,7 +18,7 @@ void Usar::ejecuta(){
                 Personaje->setVida(Personaje->getVida()+cosita->ejecuta());
                 std::cout << "El starbucks te aporto una vida de +" << std::to_string(cosita->ejecuta()) << std::endl;
             } else if (cosa == "Pluma"){
-                Personaje->setAtaque(Personaje->getAtaque()+ cosita->ejecuta());
+                Personaje->setAtaque(*Personaje + cosita);
                 std::cout << "La pluma te aporta mayor daño ahora golpeas con +" << std::to_string(cosita->ejecuta()) << std::endl;
             }
         } else {

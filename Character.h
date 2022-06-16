@@ -5,7 +5,7 @@
 #include <vector>
 
 #include "Room.h"
-#include "Item.h"
+#include "Pluma.h"
 
 class Character{
     private:
@@ -44,6 +44,8 @@ class Character{
         void imprimeInventario();
         bool buscaItem(std::string);
         bool camina(std::string);
+
+        int operator+(Item*); 
 };
 
 #endif

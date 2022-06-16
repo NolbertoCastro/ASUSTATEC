@@ -165,3 +165,8 @@ void Character::setVIDAC(int _vidac){
 int Character::getVIDAC(){
     return VIDAC;
 }
+
+int Character::operator + (Item* starwars){
+    int regreso = ataque + starwars->ejecuta();
+    return regreso;
+}
