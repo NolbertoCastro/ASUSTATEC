@@ -2,12 +2,12 @@
 
 Starbucks::Starbucks(){
     setName("Starbucks");
-    setPeso(3);
+    setweight(3);
     setSanacion(15);
     setdescription("Te brinda más health y te da calor");
 }
 
-Starbucks::Starbucks(std::string _name, std::string _description, int _peso, int _sanacion):Item(_name, _description, _peso){
+Starbucks::Starbucks(std::string _name, std::string _description, int _weight, int _sanacion):Item(_name, _description, _weight){
     sanacion = _sanacion;
 }
 

@@ -11,21 +11,21 @@ class Room {
         Room();
         Room(std::string, bool);
         std::string getDescription();
-        Room* getSalida(std::string);
-        int numSalida(std::string);
-        void setSalidas(Room*, Room*, Room*, Room*);
+        Room* getExit(std::string);
+        int getMove(std::string);
+        void setexits(Room*, Room*, Room*, Room*);
         NPC* getNPC();
         void setNPC(NPC*);
         Item* getItem(int);
         void sacaItem(int);
-        void agregaItem(Item*);
+        void addItem(Item*);
         int searchItem(std::string);
         void descriptionLarga();
-        bool requiereLlave();
+        bool keyRequired();
     private:
         std::string description;
         std::vector<Item*> cosas;
-        Room* salidas[4];
+        Room* exits[4];
         bool tieneLlave;
         NPC* NPC1;
 };

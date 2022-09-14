@@ -12,7 +12,7 @@ class useItem: public Command{
         useItem(Character*);
         void execute();
     private:
-        Character* Personaje;
+        Character* Player;
 };
 
 #endif

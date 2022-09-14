@@ -10,7 +10,7 @@ class takeCommand:public Command{
         takeCommand(Character*);
         void execute();
     private:
-        Character* jugador;
+        Character* Player;
 };
 
 #endif //takeCommand_H

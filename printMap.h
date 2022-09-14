@@ -10,6 +10,6 @@ class printMap: public Command{
         printMap(Character*);
         void execute();
     private:
-        Character* Personaje;
+        Character* Player;
 };
 #endif

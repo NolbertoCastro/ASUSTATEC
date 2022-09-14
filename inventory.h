@@ -10,7 +10,7 @@ class inventory: public Command{
         inventory(Character*);
         void execute();
     private:
-        Character* Personaje;
+        Character* Player;
 };
 
 #endif

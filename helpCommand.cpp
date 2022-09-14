@@ -1,11 +1,11 @@
 #include "helpCommand.h"
 
-helpCommand::helpCommand(wordList* palabras):Command("help", ""){
-    validas=palabras;
+helpCommand::helpCommand(wordList* words):Command("help", ""){
+    validCommands=words;
 }
 
 void helpCommand::execute(){
-    std::cout<< "¿Estas perdido?, dejame te muestros los command disponibles que tienes" << std::endl;
-    std::cout << "Los command que tienes son:" << std::endl;
-    std::cout << validas->allCommands() << std::endl;
+    std::cout<< "Are you lost?, let me show you what commands you can use" << std::endl;
+    std::cout << "Available Commands:" << std::endl;
+    std::cout << validCommands->allCommands() << std::endl;
 }

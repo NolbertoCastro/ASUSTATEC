@@ -9,22 +9,22 @@ class NPC{
         NPC();
         NPC(std::string, int, int, int, int);
         void setName(std::string);
-        void setDano(int);
+        void setDamage(int);
         void setHealth(int);
         void setHealthC(int);
         void setProtection(int);
         int getHealthC();
-        Item* getRecompensa();
-        void setRecompensa(Item*);
+        Item* getReward();
+        void setReward(Item*);
         std::string getName();
-        int getDano();
+        int getDamage();
         int getHealth();
         int getProtection();
 
     private:
         std::string name;
-        int dano, health, protection, HealthC;
-        Item* Recompensa;
+        int damage, health, protection, HealthC;
+        Item* reward;
 
 
 };

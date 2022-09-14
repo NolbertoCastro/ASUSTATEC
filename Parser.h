@@ -10,7 +10,7 @@ class Parser {
         Parser();
         Parser(wordList*);
         wordList* getcommand();
-        Command* generaCommand();
+        Command* createCommand();
     private:
         wordList* command;
 };

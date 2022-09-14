@@ -26,6 +26,6 @@ bool Command::unKnown(){
     return command =="";
 }
 
-bool Command::tieneprompt(){
+bool Command::promptExistance(){
     return prompt!="";
 }

@@ -7,7 +7,7 @@ class helpCommand:public Command{
         helpCommand(wordList*);
         void execute();
     private:
-        wordList* validas;
+        wordList* validCommands;
 };
 
 #endif //helpCommand_H

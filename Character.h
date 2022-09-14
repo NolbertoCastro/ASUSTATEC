@@ -30,7 +30,7 @@ class Character{
 
         void setName(std::string);
         void setHealth(int);
-        void setPosicion(Room*);
+        void setPosition(Room*);
         void setInventory(std::vector <Item*>);
         void setAttack(int);
         void setMoney(int);

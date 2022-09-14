@@ -3,31 +3,31 @@
 Room::Room(){
     description="Es una habitacion sin name";
     for (int i=0; i<4; i++){
-        salidas[i]=nullptr;
+        exits[i]=nullptr;
     }
     tieneLlave=false;
 }
 Room::Room(std::string desc, bool cerrado){
     description=desc;
     for (int i=0; i<4; i++){
-        salidas[i]=nullptr;
+        exits[i]=nullptr;
     }
     tieneLlave=cerrado;
 }
 
-Room* Room::getSalida(std::string dir){
-    int num=numSalida(dir);
+Room* Room::getExit(std::string dir){
+    int num=getMove(dir);
     if(num>=0){
-        return salidas[num];
+        return exits[num];
     }
     return nullptr;
 }
 
-void Room::setSalidas(Room* n, Room* s, Room* e, Room* o){
-    salidas[0]=n;
-    salidas[1]=s;
-    salidas[2]=e;
-    salidas[3]=o;
+void Room::setexits(Room* n, Room* s, Room* e, Room* o){
+    exits[0]=n;
+    exits[1]=s;
+    exits[2]=e;
+    exits[3]=o;
 }
 
 std::string Room::getDescription(){
@@ -40,7 +40,7 @@ Item* Room::getItem(int num){
     }
     return nullptr;
 }
-bool Room::requiereLlave(){
+bool Room::keyRequired(){
     return tieneLlave;
 }
 
@@ -68,7 +68,7 @@ void Room::descriptionLarga(){
     }
 }
 
-int Room::numSalida(std::string dir){
+int Room::getMove(std::string dir){
     if (dir=="N"){
         return 0;
     }
@@ -78,7 +78,7 @@ int Room::numSalida(std::string dir){
     if (dir=="E"){
         return 2;
     }
-    if (dir=="O"){
+    if (dir=="W"){
         return 3;
     }
     return -1;

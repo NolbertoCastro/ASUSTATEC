@@ -1,7 +1,7 @@
 #include "printMap.h"
 
-printMap::printMap(Character* personaje):Command("printMap", ""){
-    Personaje = personaje;
+printMap::printMap(Character* Player):Command("printMap", ""){
+    Player = Player;
 }
 
 void printMap::execute(){
@@ -11,11 +11,11 @@ void printMap::execute(){
     std::cout << "*░░░**░░░**░░░*" << std::endl;
     std::cout << "******░░░******" << std::endl;
     std::cout << "*░░░**░░░*" << std::endl;
-    std::cout << "*░S░░░░2░*" << std::endl;
+    std::cout << "*░C░░░░2░*" << std::endl;
     std::cout << "*░░░**░░░*" << std::endl;
     std::cout << "******░░░*" << std::endl;
     std::cout << "*░░░**░░░*" << std::endl;
-    std::cout << "*░B░░░░1░*" << std::endl;
+    std::cout << "*░W░░░░1░*" << std::endl;
     std::cout << "*░░░**░░░*" << std::endl;
     std::cout << "**********\n" << std::endl;
     // std::cout << "*░░░**░░░*" << std::endl;
@@ -27,5 +27,5 @@ void printMap::execute(){
     // std::cout << "*░░░**░░░*" << std::endl;
     // std::cout << "**********" << std::endl;
 
-    std::cout << "You're in the room: " << Personaje->getPosition()->getDescription() << std::endl;
+    std::cout << "You're in the room: " << Player->getPosition()->getDescription() << std::endl;
 }

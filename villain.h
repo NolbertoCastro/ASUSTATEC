@@ -10,11 +10,11 @@ class villain: public NPC{
         villain();
         villain(std::string, int, int, int, Item*, int);
 
-        void setRecompensa(Item*);
-        Item* getRecompensa();
+        void setReward(Item*);
+        Item* getReward();
         
     private:
-        Item* recompensa;
+        Item* reward;
 };
 
 #endif

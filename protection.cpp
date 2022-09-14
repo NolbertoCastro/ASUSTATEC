@@ -4,7 +4,7 @@ protection::protection(){
     protectionValue = 0;
 }
 
-protection::protection(std::string _name, std::string _description, int _peso, int _protection):Item(_name, _description, _peso){
+protection::protection(std::string _name, std::string _description, int _weight, int _protection):Item(_name, _description, _weight){
     protectionValue = _protection;
 }
 

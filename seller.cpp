@@ -1,6 +1,6 @@
 #include "seller.h"
 
-seller::seller(std::string name, int health, int dano, int protection, int HealthC):NPC(name, health, dano, protection, HealthC){
+seller::seller(std::string name, int health, int damage, int protection, int HealthC):NPC(name, health, damage, protection, HealthC){
 }
 
 Item* seller::getItem(std::string name){
@@ -14,6 +14,6 @@ Item* seller::getItem(std::string name){
     return nullptr;
 }
 
-void seller::agregaItem(Item* cosa){
+void seller::addItem(Item* cosa){
     inventory.push_back(cosa);
 }

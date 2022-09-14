@@ -15,7 +15,7 @@ class seller:public NPC{
         seller(std::string, int, int, int, int);
 
         Item* getItem(std::string);
-        void agregaItem(Item*);
+        void addItem(Item*);
 };
 
 #endif

@@ -3,7 +3,7 @@
 Character::Character(){
     setName(" ");
     setHealth(0);
-    setPosicion(actualRoom);
+    setPosition(actualRoom);
     setAttack(0);
     setMoney(0);
     setProtection(0);
@@ -13,7 +13,7 @@ Character::Character(){
 Character::Character(std::string _name, int _health, Room* _actualRoom, int _attack, int _money, int _protection, int healthC){
     setName(_name);
     setHealth(_health);
-    setPosicion(_actualRoom);
+    setPosition(_actualRoom);
     setAttack(_attack);
     setMoney(_money);
     setProtection(_protection);
@@ -56,7 +56,7 @@ void Character::setHealth(int _health){
     health = _health;
 }
 
-void Character::setPosicion(Room* _actualRoom){
+void Character::setPosition(Room* _actualRoom){
     actualRoom = _actualRoom;
 }
 
@@ -123,15 +123,15 @@ bool Character::searchItem(std::string item){
     return false;
 }
 
-bool Character::move(std::string dir){
-    Room* voyA= actualRoom->getSalida(dir);
-    if (voyA!=nullptr && !voyA->requiereLlave()){
-        setPosicion(voyA);
+bool Character::move(std::string direction){
+    Room* exit = actualRoom->getExit(direction);
+    if (exit !=nullptr && !exit ->keyRequired()){
+        setPosition(exit );
         return true;
     }
-    else if (voyA!=nullptr && voyA->requiereLlave()){
-        if (searchItem("Llave")){
-            setPosicion(voyA);
+    else if (exit !=nullptr && exit ->keyRequired()){
+        if (searchItem("Key")){
+            setPosition(exit);
             return true;
         }
     }

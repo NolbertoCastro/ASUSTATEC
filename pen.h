@@ -6,11 +6,11 @@
 
 class pen:public Item{
     private:
-        int extraDanio;
+        int moreDamage;
     public:
         pen();
         pen(std::string, std::string, int, int);
-        void setExtra(int);
+        void setMoreDamage(int);
         int ejecuta();
 };
 

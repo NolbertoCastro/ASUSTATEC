@@ -3,13 +3,13 @@
 villain::villain(){
 }
 
-villain::villain(std::string name, int health, int dano, int protection, Item* recompensa, int HealthC):NPC(name, health, dano, protection, HealthC){
+villain::villain(std::string name, int health, int damage, int protection, Item* reward, int HealthC):NPC(name, health, damage, protection, HealthC){
 }
 
-Item* villain::getRecompensa(){
-    return recompensa;
+Item* villain::getReward(){
+    return reward;
 }
 
-void villain::setRecompensa(Item* _recompensa){
-    recompensa = _recompensa;
+void villain::setReward(Item* _recompensa){
+    reward = _recompensa;
 }

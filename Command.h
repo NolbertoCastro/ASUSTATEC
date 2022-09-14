@@ -11,7 +11,7 @@ class Command
         std::string getprompt() const;
         void setprompt(std::string);
         bool unKnown();
-        bool tieneprompt();
+        bool promptExistance();
         virtual void execute() = 0;
     private:
         std::string command;

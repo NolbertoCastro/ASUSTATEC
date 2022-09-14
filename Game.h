@@ -26,11 +26,11 @@ class Game {
         void printWelcome();
     private:
         Parser parser;
-        Character* personaje;
-        Room *Pasillo, *Pasillo2, *Pasillo3, *Elevador, *Banio, *Salon, *Oficina;
-        Item *llave; 
+        Character* Player;
+        Room *Hallway, *Hallway2, *Hallway3, *Elevator, *WC, *Classroom, *Office;
+        Item *Key; 
         Starbucks *S1, *S2;
         pen *P1;
-        NPC *Teus, *Comercio, *Agente47;
+        NPC *Teus, *Seller, *Agent47;
 };
 #endif //GAME_H

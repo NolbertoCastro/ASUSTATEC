@@ -1,31 +1,31 @@
 #include "attack.h"
 
-attack::attack(Character* _personaje):Command("attack", ""){
-    Personaje = _personaje; 
+attack::attack(Character* _player):Command("attack", ""){
+    Player = _player; 
 }
 
 void attack::execute(){
     attack::setAtributos();
     system("clear");
     std::cout << "\nFIGHT!!!!\n" << std::endl;
-    std::cout << "Tu contricante es: " << Enemigo->getName() << std::endl;
-    std::cout << "Daño: " << std::to_string(Enemigo->getDano()) << "   " << "Protección: " << std::to_string(Enemigo->getProtection()) << "\n" << std::endl;
-    Enemigo->setHealth((Enemigo->getHealth()- Personaje->getAttack()));
-    attack::printHealthNPC(Enemigo);
+    std::cout << "Your Enenemy is: " << Enemy->getName() << std::endl;
+    std::cout << "Damage: " << std::to_string(Enemy->getDamage()) << "   " << "Protection: " << std::to_string(Enemy->getProtection()) << "\n" << std::endl;
+    Enemy->setHealth((Enemy->getHealth() - Player->getAttack()));
+    attack::printHealthNPC(Enemy);
     std::cout << "\n" << std::endl;
     std::cout << "\n" << std::endl;
     std::cout << "\n" << std::endl;
-    attack::enemigoattack();
-    attack::printHealth(Personaje);
+    attack::Enemyattack();
+    attack::printHealth(Player);
     std::cout << "\n" << std::endl;
-    std::cout << "Tu mero: " << Personaje->getName() << std::endl;
-    std::cout << "Daño: " << std::to_string(Personaje->getAttack()) << "   " << "Protección: " << std::to_string(Personaje->getProtection()) << "\n" << std::endl;
-    if (Enemigo->getHealth() <= 0){
-        std::cout << "Muchas Felicidades has vencido a " << Enemigo->getName() << " en recompensa te damos el siguiente premio:" << std::endl;
-        Enemigo->getRecompensa()->printItem();
-        Enemigo->setHealth(Enemigo->getHealthC());
-        Personaje->addItem(Enemigo->getRecompensa());
-        std::cout << "Puedes ver este item en tu inventory usando el Command inventory" << std::endl;
+    std::cout << "You: " << Player->getName() << std::endl;
+    std::cout << "Damage: " << std::to_string(Player->getAttack()) << "   " << "Protection: " << std::to_string(Player->getProtection()) << "\n" << std::endl;
+    if (Enemy->getHealth() <= 0){
+        std::cout << "Congratulations you beated " << Enemy->getName() << ", as a reward we give you this gift:" << std::endl;
+        Enemy->getReward()->printItem();
+        Enemy->setHealth(Enemy->getHealthC());
+        Player->addItem(Enemy->getReward());
+        std::cout << 'You can see this item in your Inventory using the Command "inventory"' << std::endl;
     }
 }
 
@@ -52,13 +52,13 @@ void attack::printHealth(Character* per){
 }
 
 void attack::setAtributos(){
-    Enemigo = Personaje->getPosition()->getNPC();
+    Enemy = Player->getPosition()->getNPC();
 }
 
-void attack::enemigoattack(){
+void attack::Enemyattack(){
     srand(time(NULL));
     int attackr = 0 + rand() % (1 - 0 + 1);
     if (attackr == 1){
-        Personaje->setHealth(Personaje->getHealth()-Enemigo->getDano());
+        Player->setHealth(Player->getHealth()-Enemy->getDamage());
     }
 }

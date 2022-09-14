@@ -2,19 +2,19 @@
 
 pen::pen(){
     setName("pen");
-    setdescription("Usala para tener más daño");
-    setPeso(4);
-    setExtra(3);
+    setDescription("Use it to obtain more Damage");
+    setWeight(4);
+    setMoreDamage(3);
 }
 
-pen::pen(std::string _name, std::string _description, int _peso, int _extraDanio):Item(_name, _description, _peso){
-    setExtra(_extraDanio);
+pen::pen(std::string _name, std::string _description, int _weight, int _moreDamage):Item(_name, _description, _weight){
+    setMoreDamage(_moreDamage);
 }
 
-void pen::setExtra(int _extraDanio){
-    extraDanio = _extraDanio;
+void pen::setMoreDamage(int _moreDamage){
+    moreDamage = _moreDamage;
 }
 
 int pen::ejecuta(){
-    return extraDanio;
+    return moreDamage;
 }

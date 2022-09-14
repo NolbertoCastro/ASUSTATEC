@@ -15,10 +15,10 @@ class attack: public Command{
         void printHealth(Character*);
         void printHealthNPC(NPC*);
         void setAtributos();
-        void enemigoattack();
+        void Enemyattack();
     private:
-        NPC* Enemigo;
-        Character* Personaje;
+        NPC* Enemy;
+        Character* Player;
 };
 
 #endif

@@ -9,28 +9,28 @@ wordList* Parser::getcommand(){
     return command;
 }
 
-Command* Parser::generaCommand(){
+Command* Parser::createCommand(){
     
-    std::string instruccion, primera, segunda;
+    std::string instruction, firstWord, secondWord;
     std::cout << ">>>>";
-    std::getline(std::cin, instruccion);
-    std::stringstream sstr(instruccion);
-    sstr >> primera;
-    sstr >> segunda;
+    std::getline(std::cin, instruction);
+    std::stringstream sstr(instruction);
+    sstr >> firstWord;
+    sstr >> secondWord;
     sstr.ignore();
 
     // Excepción si el Command es erroneo
     try  {
-       Command* commandWord=command->getCommand(primera);
+       Command* commandWord=command->getCommand(firstWord);
        if(commandWord){
-        commandWord->setprompt(segunda);
+        commandWord->setprompt(secondWord);
         return commandWord;
        } else {
         throw commandWord;
        }
     }
     catch (Command* error)  {
-        std::cout << "Ingresaste un valor erroneo\n";
-        std::cout << "Ingresa un Command valido por favor\n";
+        std::cout << "You wrote a wrong value\n";
+        std::cout << "Write a valid Command to use\n";
     }
 }

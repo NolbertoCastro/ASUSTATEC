@@ -9,7 +9,7 @@ class moveCommand:public Command{
         moveCommand(Character*);
         void execute();
     private:
-        Character* jugador;
+        Character* Player;
 };
 
 #endif //moveCommand_H
