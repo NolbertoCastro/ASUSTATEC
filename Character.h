@@ -5,12 +5,12 @@
 #include <vector>
 
 #include "Room.h"
-#include "Pluma.h"
+#include "pen.h"
 
 class Character{
     private:
         std::string nombre;
-        int vida, ataque, dinero, proteccion, VIDAC;
+        int vida, ataque, dinero, protection, VIDAC;
         Room* RoomActual;
         std::vector <Item*> inventory;
     public:
@@ -24,7 +24,7 @@ class Character{
         int getAtaque() const;
         int getDinero() const;
         int getVIDAC();
-        int getProteccion() const;
+        int getprotection() const;
         Item* getItem(std::string);
         void expulsarItem(std::string);
 
@@ -35,7 +35,7 @@ class Character{
         void setAtaque(int);
         void setDinero(int);
         void setVIDAC(int);
-        void setProteccion(int);
+        void setprotection(int);
 
         void agregarItem(Item*);
         void consultaItem(std::string);

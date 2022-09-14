@@ -15,7 +15,7 @@ void Game::createComands(){
     command->addCommand("printMap", new printMap(personaje));
     command->addCommand("inventory", new inventory(personaje));
     command->addCommand("Ataca", new Ataca(personaje));
-    command->addCommand("Usar", new Usar(personaje));
+    command->addCommand("useItem", new useItem(personaje));
 }
 
 /*crea todos los elementos que están presentes en el juego 
@@ -26,15 +26,15 @@ void Game::createElements(){
     Pasillo2 = new Room("Pasillo2, no hay nada", false);
     Pasillo3 = new Room("Pasillo3, no hay nada", false);
     Elevador = new Room("Elevador", true);
-    Banio = new Room("Banio, hay una Pluma y un Starbucks", false);
+    Banio = new Room("Banio, hay una pen y un Starbucks", false);
     Salon = new Room("Salon,hace frio, hay un Teus Satanico en el cuarto, si quieres atacarlo y ganar una recompensa escribe Ataca", false);
     Oficina = new Room("Oficina, hay un enemigo frio y calculador llamado Agente47 si quieres enfrentarlo y ganar una recompensa escribe Ataca", false);
-    //hay un fantasma que te puede vender cosas, Una pluma en 500 y Una experiencia (Starbucks) en 600
+    //hay un fantasma que te puede vender cosas, Una pen en 500 y Una experiencia (Starbucks) en 600
     
 
     //Definimos Objetos
     llave=new Item("Llave", "Te permitirá utilizar el elevador y salir del juego", 0);
-    P1 = new Pluma();
+    P1 = new pen();
     S1 = new Starbucks();
     S2 = new Starbucks();
 
@@ -111,7 +111,7 @@ void Game::printWelcome(){
 
     std::cout << "\nEmpezarás en al inicio del pasillo localizado al lado del cuarto #5, tendrás que recorrer los cuartos, vencer enemigos, comprar objetos." << std::endl;
     std::cout << "\nTodo con el objetivo de conseguir la tarjeta de alumno tec para acceder al elevador." << std::endl;
-    std::cout << "\nPara poder moverte por el mapa podras usar los siguientes command:" << std::endl;
+    std::cout << "\nPara poder moverte por el mapa podras useItem los siguientes command:" << std::endl;
 
     std::cout << "\nhelp = Imprimir los command disponibles" << std::endl;
     std::cout << "Mover N = Arriba" << std::endl;
@@ -120,7 +120,7 @@ void Game::printWelcome(){
     std::cout << "Mover E = Derecha" << std::endl;
     std::cout << "Ataca = Atacas al personaje en cuestion en el cuarto" << std::endl;
     std::cout << "take + Objeto = Agarrar objeto de cuarto" << std::endl;
-    std::cout << "Usar + Objeto = Utilizar un objeto del inventory" << std::endl;
+    std::cout << "useItem + Objeto = Utilizar un objeto del inventory" << std::endl;
     std::cout << "inventory = Te imprime tu inventory" << std::endl;
     std::cout << "ImprimeMapa = Te despliega el mapa y tu posición actual" << std::endl;
     std::cout << "Si necesitas help teclea la palabra: help\n" << std::endl;

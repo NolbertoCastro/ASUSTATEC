@@ -1,15 +1,15 @@
-#ifndef PLUMA_H
-#define PLUMA_H
+#ifndef pen_H
+#define pen_H
 
 #include <iostream>
 #include "Item.h"
 
-class Pluma:public Item{
+class pen:public Item{
     private:
         int extraDanio;
     public:
-        Pluma();
-        Pluma(std::string, std::string, int, int);
+        pen();
+        pen(std::string, std::string, int, int);
         void setExtra(int);
         int ejecuta();
 };

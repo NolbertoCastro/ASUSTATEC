@@ -6,17 +6,17 @@ Character::Character(){
     setPosicion(RoomActual);
     setAtaque(0);
     setDinero(0);
-    setProteccion(0);
+    setprotection(0);
     setVIDAC(0);
 }
 
-Character::Character(std::string _nombre, int _vida, Room* _RoomActual, int _ataque, int _dinero, int _proteccion, int vidaC){
+Character::Character(std::string _nombre, int _vida, Room* _RoomActual, int _ataque, int _dinero, int _protection, int vidaC){
     setNombre(_nombre);
     setVida(_vida);
     setPosicion(_RoomActual);
     setAtaque(_ataque);
     setDinero(_dinero);
-    setProteccion(_proteccion);
+    setprotection(_protection);
     setVIDAC(vidaC);
 }
 
@@ -44,8 +44,8 @@ int Character::getDinero() const{
     return dinero;
 }
 
-int Character::getProteccion() const{
-    return proteccion;
+int Character::getprotection() const{
+    return protection;
 }
 
 void Character::setNombre(std::string _nombre){
@@ -72,8 +72,8 @@ void Character::setDinero(int _dinero){
     dinero = _dinero;
 }
 
-void Character::setProteccion(int _proteccion){
-    proteccion = _proteccion;
+void Character::setprotection(int _protection){
+    protection = _protection;
 }
 
 void Character::agregarItem(Item* _item){
@@ -108,7 +108,7 @@ void Character::imprime(){
     std::cout << "Nombre: " << nombre << std::endl;
     std::cout << "Vida: " << vida << std::endl;
     std::cout << "Ataque: " << ataque << std::endl;
-    std::cout << "Proteccion: " << proteccion << std::endl; 
+    std::cout << "protection: " << protection << std::endl; 
     std::cout << "Room actual: " << RoomActual << std::endl;
     std::cout << "inventory: \n" << std::endl;
     Character::imprimeinventory();

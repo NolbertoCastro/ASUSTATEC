@@ -1,12 +1,12 @@
-#include "Usar.h"
+#include "useItem.h"
 
-Usar::Usar(Character* personaje):Command("Usar", ""){
+useItem::useItem(Character* personaje):Command("useItem", ""){
     Personaje = personaje;
 }
 
-void Usar::execute(){
+void useItem::execute(){
     if (!tieneSegPalabra()){
-        std::cout<< "¿Qué quieres usar?, debes especificarme que objeto quieres" << std::endl;
+        std::cout<< "¿Qué quieres useItem?, debes especificarme que objeto quieres" << std::endl;
     }
     else{
         std::string cosa = getSegPalabra();
@@ -17,9 +17,9 @@ void Usar::execute(){
                 Personaje->setVIDAC(Personaje->getVida()+cosita->execute());
                 Personaje->setVida(Personaje->getVida()+cosita->execute());
                 std::cout << "El starbucks te aporto una vida de +" << std::to_string(cosita->execute()) << std::endl;
-            } else if (cosa == "Pluma"){
+            } else if (cosa == "pen"){
                 Personaje->setAtaque(*Personaje + cosita);
-                std::cout << "La pluma te aporta mayor daño ahora golpeas con +" << std::to_string(cosita->execute()) << std::endl;
+                std::cout << "La pen te aporta mayor daño ahora golpeas con +" << std::to_string(cosita->execute()) << std::endl;
             }
         } else {
             std::cout<< "No tienes ese objeto en tu inventory" << std::endl;

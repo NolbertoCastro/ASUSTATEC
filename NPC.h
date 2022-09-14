@@ -12,18 +12,18 @@ class NPC{
         void setDano(int);
         void setVida(int);
         void setVIDAC(int);
-        void setProteccion(int);
+        void setprotection(int);
         int getVIDAC();
         Item* getRecompensa();
         void setRecompensa(Item*);
         std::string getNombre();
         int getDano();
         int getVida();
-        int getProteccion();
+        int getprotection();
 
     private:
         std::string nombre;
-        int dano, vida, proteccion, VIDAC;
+        int dano, vida, protection, VIDAC;
         Item* Recompensa;
 
 

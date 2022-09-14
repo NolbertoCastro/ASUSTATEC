@@ -1,6 +1,6 @@
 #include "Comerciante.h"
 
-Comerciante::Comerciante(std::string nombre, int vida, int dano, int proteccion, int VIDAC):NPC(nombre, vida, dano, proteccion, VIDAC){
+Comerciante::Comerciante(std::string nombre, int vida, int dano, int protection, int VIDAC):NPC(nombre, vida, dano, protection, VIDAC){
 }
 
 Item* Comerciante::getItem(std::string nombre){

@@ -26,7 +26,7 @@ Command* wordList::getCommand(std::string pal){
 }
 
 std::string wordList::todosLoscommand(){
-    std::string todos="Los command que puedes usar son:\n";
+    std::string todos="Los command que puedes useItem son:\n";
     for(std::string &pal:palabras){
         todos += "\t"+ pal + "\n";
     }

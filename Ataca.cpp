@@ -9,7 +9,7 @@ void Ataca::execute(){
     system("clear");
     std::cout << "\nFIGHT!!!!\n" << std::endl;
     std::cout << "Tu contricante es: " << Enemigo->getNombre() << std::endl;
-    std::cout << "Daño: " << std::to_string(Enemigo->getDano()) << "   " << "Protección: " << std::to_string(Enemigo->getProteccion()) << "\n" << std::endl;
+    std::cout << "Daño: " << std::to_string(Enemigo->getDano()) << "   " << "Protección: " << std::to_string(Enemigo->getprotection()) << "\n" << std::endl;
     Enemigo->setVida((Enemigo->getVida()- Personaje->getAtaque()));
     Ataca::imprimevidaNPC(Enemigo);
     std::cout << "\n" << std::endl;
@@ -19,7 +19,7 @@ void Ataca::execute(){
     Ataca::imprimevida(Personaje);
     std::cout << "\n" << std::endl;
     std::cout << "Tu mero: " << Personaje->getNombre() << std::endl;
-    std::cout << "Daño: " << std::to_string(Personaje->getAtaque()) << "   " << "Protección: " << std::to_string(Personaje->getProteccion()) << "\n" << std::endl;
+    std::cout << "Daño: " << std::to_string(Personaje->getAtaque()) << "   " << "Protección: " << std::to_string(Personaje->getprotection()) << "\n" << std::endl;
     if (Enemigo->getVida() <= 0){
         std::cout << "Muchas Felicidades has vencido a " << Enemigo->getNombre() << " en recompensa te damos el siguiente premio:" << std::endl;
         Enemigo->getRecompensa()->imprimirItem();

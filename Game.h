@@ -11,10 +11,10 @@
 #include "Ataca.h"
 #include "Parser.h"
 #include "Starbucks.h"
-#include "Pluma.h"
+#include "pen.h"
 #include "NPC.h"
 #include "Comerciante.h"
-#include "Usar.h"
+#include "useItem.h"
 
 class Game {
     public:
@@ -30,7 +30,7 @@ class Game {
         Room *Pasillo, *Pasillo2, *Pasillo3, *Elevador, *Banio, *Salon, *Oficina;
         Item *llave; 
         Starbucks *S1, *S2;
-        Pluma *P1;
+        pen *P1;
         NPC *Teus, *Comercio, *Agente47;
 };
 #endif //GAME_H

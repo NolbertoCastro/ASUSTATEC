@@ -1,5 +1,5 @@
-#ifndef USAR_H
-#define USAR_H
+#ifndef useItem_H
+#define useItem_H
 
 #include <iostream>
 #include "Command.h"
@@ -7,9 +7,9 @@
 #include "Item.h"
 #include "Room.h"
 
-class Usar: public Command{
+class useItem: public Command{
     public:
-        Usar(Character*);
+        useItem(Character*);
         void execute();
     private:
         Character* Personaje;
