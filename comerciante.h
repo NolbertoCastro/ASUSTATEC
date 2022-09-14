@@ -8,7 +8,7 @@
 
 class Comerciante:public NPC{
     private:
-        std::vector<Item*> Inventario;
+        std::vector<Item*> inventory;
 
     public:
         Comerciante();
