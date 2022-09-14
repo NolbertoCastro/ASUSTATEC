@@ -1,14 +1,14 @@
-#include "ListaPalabras.h"
+#include "wordList.h"
 
 
-ListaPalabras::ListaPalabras(){}
+wordList::wordList(){}
 
-void ListaPalabras::addCommand(std::string pal, Command* com){
+void wordList::addCommand(std::string pal, Command* com){
     palabras.push_back(pal);
     command.push_back(com);
 }
 
-int ListaPalabras::esCommand(std::string pal){
+int wordList::esCommand(std::string pal){
     for(int i=0; i<palabras.size(); i++){
         if (palabras[i]==pal){
             return i;
@@ -17,7 +17,7 @@ int ListaPalabras::esCommand(std::string pal){
     return -1;
 }
 
-Command* ListaPalabras::getCommand(std::string pal){
+Command* wordList::getCommand(std::string pal){
     int pos=esCommand(pal);
     if(pos>=0){
         return command[pos];
@@ -25,7 +25,7 @@ Command* ListaPalabras::getCommand(std::string pal){
     return nullptr;
 }
 
-std::string ListaPalabras::todosLoscommand(){
+std::string wordList::todosLoscommand(){
     std::string todos="Los command que puedes usar son:\n";
     for(std::string &pal:palabras){
         todos += "\t"+ pal + "\n";

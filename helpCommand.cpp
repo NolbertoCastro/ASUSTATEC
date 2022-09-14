@@ -1,6 +1,6 @@
 #include "helpCommand.h"
 
-helpCommand::helpCommand(ListaPalabras* palabras):Command("help", ""){
+helpCommand::helpCommand(wordList* palabras):Command("help", ""){
     validas=palabras;
 }
 

@@ -1,13 +1,13 @@
 #ifndef helpCommand_H
 #define helpCommand_H
 #include "Command.h"
-#include "ListaPalabras.h"
+#include "wordList.h"
 class helpCommand:public Command{
     public:
-        helpCommand(ListaPalabras*);
+        helpCommand(wordList*);
         void execute();
     private:
-        ListaPalabras* validas;
+        wordList* validas;
 };
 
 #endif //helpCommand_H

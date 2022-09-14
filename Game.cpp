@@ -8,7 +8,7 @@ Game::Game(){
 }
 
 void Game::createComands(){
-    ListaPalabras* command=parser.getcommand(); 
+    wordList* command=parser.getcommand(); 
     command->addCommand("Mover", new moveCommand(personaje));
     command->addCommand("take", new takeCommand(personaje));
     command->addCommand("help", new helpCommand(command));

@@ -3,16 +3,16 @@
 
 #include <iostream>
 #include <sstream>
-#include "ListaPalabras.h"
+#include "wordList.h"
 
 class Parser {
     public:
         Parser();
-        Parser(ListaPalabras*);
-        ListaPalabras* getcommand();
+        Parser(wordList*);
+        wordList* getcommand();
         Command* generaCommand();
     private:
-        ListaPalabras* command;
+        wordList* command;
 };
 
 #endif //PARSER_H

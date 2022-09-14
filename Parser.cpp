@@ -1,11 +1,11 @@
 #include "Parser.h"
 
 Parser::Parser(){
-    command=new ListaPalabras;
+    command=new wordList;
 }
 
 
-ListaPalabras* Parser::getcommand(){
+wordList* Parser::getcommand(){
     return command;
 }
 

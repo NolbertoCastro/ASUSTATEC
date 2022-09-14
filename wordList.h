@@ -1,13 +1,13 @@
-#ifndef LISTAPALABRAS_H
-#define LISTAPALABRAS_H
+#ifndef wordList_H
+#define wordList_H
 #include <iostream>
 #include <vector>
 #include <string>
 #include "Command.h"
 
-class ListaPalabras{
+class wordList{
     public:
-        ListaPalabras();
+        wordList();
         void addCommand(std::string, Command*);
         int esCommand(std::string);
         Command* getCommand(std::string);
@@ -17,4 +17,4 @@ class ListaPalabras{
         std::vector <std::string> palabras;
         std::vector <Command*> command;
 };
-#endif //ListaPalabras_H
+#endif //wordList_H
