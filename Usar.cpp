@@ -22,7 +22,7 @@ void Usar::execute(){
                 std::cout << "La pluma te aporta mayor daño ahora golpeas con +" << std::to_string(cosita->execute()) << std::endl;
             }
         } else {
-            std::cout<< "No tienes ese objeto en tu inventario" << std::endl;
+            std::cout<< "No tienes ese objeto en tu inventory" << std::endl;
         }
     }
 }

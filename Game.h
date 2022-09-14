@@ -7,7 +7,7 @@
 #include "helpCommand.h"
 #include "printMap.h"
 #include "takeCommand.h"
-#include "Inventario.h"
+#include "inventory.h"
 #include "Ataca.h"
 #include "Parser.h"
 #include "Starbucks.h"

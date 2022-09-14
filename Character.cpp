@@ -32,8 +32,8 @@ Room* Character::getPosicion(){
     return RoomActual;
 }
 
-std::vector <Item*> Character::getInventario() const{
-    return inventario;
+std::vector <Item*> Character::getinventory() const{
+    return inventory;
 }
 
 int Character::getAtaque() const{
@@ -60,8 +60,8 @@ void Character::setPosicion(Room* _RoomActual){
     RoomActual = _RoomActual;
 }
 
-void Character::setInventario(std::vector <Item*> _inventario){
-    inventario = _inventario;
+void Character::setinventory(std::vector <Item*> _inventory){
+    inventory = _inventory;
 }
 
 void Character::setAtaque(int _ataque){
@@ -78,28 +78,28 @@ void Character::setProteccion(int _proteccion){
 
 void Character::agregarItem(Item* _item){
     int pesoacum = 0;
-    for(int i =0; i < inventario.size(); i++){
-        pesoacum += inventario[i]->getPeso();
+    for(int i =0; i < inventory.size(); i++){
+        pesoacum += inventory[i]->getPeso();
     };
     pesoacum += _item->getPeso();
     if (pesoacum <= 20){
-        inventario.push_back(_item);
+        inventory.push_back(_item);
     } else {
-        std::cout << "El inventario esta lleno no puede aceptar otro objeto de ese peso" << std::endl;
+        std::cout << "El inventory esta lleno no puede aceptar otro objeto de ese peso" << std::endl;
     }
 }
 
 void Character::consultaItem(std::string item){
-    for(int i =0; i < inventario.size(); i++){
-        if (inventario[i]->getNombre() == item){
-            inventario[i]->imprimirItem();
+    for(int i =0; i < inventory.size(); i++){
+        if (inventory[i]->getNombre() == item){
+            inventory[i]->imprimirItem();
         } 
     }
 }
 
-void Character::imprimeInventario(){
-    for(int i =0; i < inventario.size(); i++){
-        inventario[i]->imprimirItem();  
+void Character::imprimeinventory(){
+    for(int i =0; i < inventory.size(); i++){
+        inventory[i]->imprimirItem();  
         std::cout << "\n<---------------------------->\n" << std::endl;  
     }
 }
@@ -110,13 +110,13 @@ void Character::imprime(){
     std::cout << "Ataque: " << ataque << std::endl;
     std::cout << "Proteccion: " << proteccion << std::endl; 
     std::cout << "Room actual: " << RoomActual << std::endl;
-    std::cout << "Inventario: \n" << std::endl;
-    Character::imprimeInventario();
+    std::cout << "inventory: \n" << std::endl;
+    Character::imprimeinventory();
 }
 
 bool Character::buscaItem(std::string cosa){
-    for(int i=0; i< inventario.size(); i++){
-        if (inventario[i]->getNombre()==cosa){
+    for(int i=0; i< inventory.size(); i++){
+        if (inventory[i]->getNombre()==cosa){
             return true;
         }
     }
@@ -138,9 +138,9 @@ bool Character::camina(std::string dir){
     return false;
 }
 Item* Character::getItem(std::string nombre){
-    for (int i = 0; i < inventario.size(); i++){
-        if (inventario[i]->getNombre() == nombre){
-            return inventario[i];
+    for (int i = 0; i < inventory.size(); i++){
+        if (inventory[i]->getNombre() == nombre){
+            return inventory[i];
         } else{
             std::cout << "No cuento con un articulo de ese estilo" << std::endl;
         }
@@ -148,11 +148,11 @@ Item* Character::getItem(std::string nombre){
 }
 
 void Character::expulsarItem(std::string item){
-    for (int i = 0; i < inventario.size(); i++){
-        if (inventario[i]->getNombre() == item){
-            auto elem_to_remove = inventario.begin() + i;
-            if (elem_to_remove != inventario.end()) {
-                inventario.erase(elem_to_remove);
+    for (int i = 0; i < inventory.size(); i++){
+        if (inventory[i]->getNombre() == item){
+            auto elem_to_remove = inventory.begin() + i;
+            if (elem_to_remove != inventory.end()) {
+                inventory.erase(elem_to_remove);
             }
         }
     }

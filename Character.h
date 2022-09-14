@@ -12,7 +12,7 @@ class Character{
         std::string nombre;
         int vida, ataque, dinero, proteccion, VIDAC;
         Room* RoomActual;
-        std::vector <Item*> inventario;
+        std::vector <Item*> inventory;
     public:
         Character();
         Character(std::string, int, Room*, int, int, int, int);
@@ -20,7 +20,7 @@ class Character{
         std::string getNombre() const;
         int getVida();
         Room* getPosicion();
-        std::vector <Item*> getInventario() const;
+        std::vector <Item*> getinventory() const;
         int getAtaque() const;
         int getDinero() const;
         int getVIDAC();
@@ -31,7 +31,7 @@ class Character{
         void setNombre(std::string);
         void setVida(int);
         void setPosicion(Room*);
-        void setInventario(std::vector <Item*>);
+        void setinventory(std::vector <Item*>);
         void setAtaque(int);
         void setDinero(int);
         void setVIDAC(int);
@@ -41,7 +41,7 @@ class Character{
         void consultaItem(std::string);
 
         void imprime();
-        void imprimeInventario();
+        void imprimeinventory();
         bool buscaItem(std::string);
         bool camina(std::string);
 

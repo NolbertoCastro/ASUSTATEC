@@ -14,7 +14,7 @@ class Command
         bool tieneSegPalabra();
         virtual void execute() = 0;
     private:
-        std::string Command;
+        std::string command;
         std::string segPalabra;
 };
 

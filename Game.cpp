@@ -13,7 +13,7 @@ void Game::createComands(){
     command->addCommand("take", new takeCommand(personaje));
     command->addCommand("help", new helpCommand(command));
     command->addCommand("printMap", new printMap(personaje));
-    command->addCommand("Inventario", new Inventario(personaje));
+    command->addCommand("inventory", new inventory(personaje));
     command->addCommand("Ataca", new Ataca(personaje));
     command->addCommand("Usar", new Usar(personaje));
 }
@@ -120,8 +120,8 @@ void Game::printWelcome(){
     std::cout << "Mover E = Derecha" << std::endl;
     std::cout << "Ataca = Atacas al personaje en cuestion en el cuarto" << std::endl;
     std::cout << "take + Objeto = Agarrar objeto de cuarto" << std::endl;
-    std::cout << "Usar + Objeto = Utilizar un objeto del inventario" << std::endl;
-    std::cout << "Inventario = Te imprime tu inventario" << std::endl;
+    std::cout << "Usar + Objeto = Utilizar un objeto del inventory" << std::endl;
+    std::cout << "inventory = Te imprime tu inventory" << std::endl;
     std::cout << "ImprimeMapa = Te despliega el mapa y tu posición actual" << std::endl;
     std::cout << "Si necesitas help teclea la palabra: help\n" << std::endl;
 }

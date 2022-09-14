@@ -25,7 +25,7 @@ void Ataca::execute(){
         Enemigo->getRecompensa()->imprimirItem();
         Enemigo->setVida(Enemigo->getVIDAC());
         Personaje->agregarItem(Enemigo->getRecompensa());
-        std::cout << "Puedes ver este item en tu inventario usando el Command Inventario" << std::endl;
+        std::cout << "Puedes ver este item en tu inventory usando el Command inventory" << std::endl;
     }
 }
 

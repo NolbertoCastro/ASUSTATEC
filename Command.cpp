@@ -1,17 +1,17 @@
 #include "Command.h"
 
 Command::Command(){
-    Command = "";
+    command = "";
     segPalabra="";
 }
 
 Command::Command(std::string com, std::string seg){
-    Command = com;
+    command = com;
     segPalabra=seg;
 }
 
 std::string Command::getCommand() const{
-    return Command;
+    return command;
 }
 
 std::string Command::getSegPalabra() const{
@@ -23,7 +23,7 @@ void Command::setSegPalabra(std::string seg){
 }
 
 bool Command::desconocido(){
-    return Command =="";
+    return command =="";
 }
 
 bool Command::tieneSegPalabra(){

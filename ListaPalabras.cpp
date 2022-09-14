@@ -34,7 +34,7 @@ std::string ListaPalabras::todosLoscommand(){
     todos+= "\t->Los command solos son:\n";
     todos+= "\t\t->Ataca\n";
     todos+= "\t\t->help\n";
-    todos+= "\t\t->Inventario\n";
+    todos+= "\t\t->inventory\n";
     todos+= "\t\t->ImprimeMapa\n";
     return todos;
 }
