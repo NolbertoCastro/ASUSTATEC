@@ -1,5 +1,5 @@
-#ifndef ATACA_H
-#define ATACA_H
+#ifndef attack_H
+#define attack_H
 
 #include <iostream>
 #include <random>
@@ -8,14 +8,14 @@
 #include "Character.h"
 #include "NPC.h"
 
-class Ataca: public Command{
+class attack: public Command{
     public:
-        Ataca(Character*);
+        attack(Character*);
         void execute();
         void imprimevida(Character*);
         void imprimevidaNPC(NPC*);
         void setAtributos();
-        void enemigoAtaca();
+        void enemigoattack();
     private:
         NPC* Enemigo;
         Character* Personaje;

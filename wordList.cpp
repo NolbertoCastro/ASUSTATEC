@@ -32,7 +32,7 @@ std::string wordList::todosLoscommand(){
     }
     todos+= "\t->El Command va seguido de una segunda palabra\n";
     todos+= "\t->Los command solos son:\n";
-    todos+= "\t\t->Ataca\n";
+    todos+= "\t\t->attack\n";
     todos+= "\t\t->help\n";
     todos+= "\t\t->inventory\n";
     todos+= "\t\t->ImprimeMapa\n";

@@ -1,9 +1,9 @@
-#include "Comerciante.h"
+#include "seller.h"
 
-Comerciante::Comerciante(std::string nombre, int vida, int dano, int protection, int VIDAC):NPC(nombre, vida, dano, protection, VIDAC){
+seller::seller(std::string nombre, int vida, int dano, int protection, int VIDAC):NPC(nombre, vida, dano, protection, VIDAC){
 }
 
-Item* Comerciante::getItem(std::string nombre){
+Item* seller::getItem(std::string nombre){
     for (int i = 0; i < inventory.size(); i++){
         if (inventory[i]->getNombre() == nombre){
             return inventory[i];
@@ -14,6 +14,6 @@ Item* Comerciante::getItem(std::string nombre){
     return nullptr;
 }
 
-void Comerciante::agregaItem(Item* cosa){
+void seller::agregaItem(Item* cosa){
     inventory.push_back(cosa);
 }

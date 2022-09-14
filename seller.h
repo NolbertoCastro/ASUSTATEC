@@ -1,18 +1,18 @@
-#ifndef COMERCIANTE_H
-#define COMERCIANTE_H
+#ifndef seller_H
+#define seller_H
 
 #include <iostream>
 #include <vector>
 #include "Item.h"
 #include "NPC.h"
 
-class Comerciante:public NPC{
+class seller:public NPC{
     private:
         std::vector<Item*> inventory;
 
     public:
-        Comerciante();
-        Comerciante(std::string, int, int, int, int);
+        seller();
+        seller(std::string, int, int, int, int);
 
         Item* getItem(std::string);
         void agregaItem(Item*);

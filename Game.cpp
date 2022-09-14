@@ -14,7 +14,7 @@ void Game::createComands(){
     command->addCommand("help", new helpCommand(command));
     command->addCommand("printMap", new printMap(personaje));
     command->addCommand("inventory", new inventory(personaje));
-    command->addCommand("Ataca", new Ataca(personaje));
+    command->addCommand("attack", new attack(personaje));
     command->addCommand("useItem", new useItem(personaje));
 }
 
@@ -27,8 +27,8 @@ void Game::createElements(){
     Pasillo3 = new Room("Pasillo3, no hay nada", false);
     Elevador = new Room("Elevador", true);
     Banio = new Room("Banio, hay una pen y un Starbucks", false);
-    Salon = new Room("Salon,hace frio, hay un Teus Satanico en el cuarto, si quieres atacarlo y ganar una recompensa escribe Ataca", false);
-    Oficina = new Room("Oficina, hay un enemigo frio y calculador llamado Agente47 si quieres enfrentarlo y ganar una recompensa escribe Ataca", false);
+    Salon = new Room("Salon,hace frio, hay un Teus Satanico en el cuarto, si quieres attackrlo y ganar una recompensa escribe attack", false);
+    Oficina = new Room("Oficina, hay un enemigo frio y calculador llamado Agente47 si quieres enfrentarlo y ganar una recompensa escribe attack", false);
     //hay un fantasma que te puede vender cosas, Una pen en 500 y Una experiencia (Starbucks) en 600
     
 
@@ -39,7 +39,7 @@ void Game::createElements(){
     S2 = new Starbucks();
 
     //Definimos personajes
-    Comercio = new Comerciante("Comerciante", 0, 0, 0, 0);
+    Comercio = new seller("seller", 0, 0, 0, 0);
     Teus = new NPC("Teus Satanico", 30, 5, 1, 30);
     Agente47 = new NPC("AGENTE 47", 10, 3, 1, 10);
     personaje=new Character("Conserje", 20, Pasillo, 3 , 800, 1, 20);
@@ -118,7 +118,7 @@ void Game::printWelcome(){
     std::cout << "Mover S = Abajo" << std::endl;
     std::cout << "Mover O = Izquierda" << std::endl;
     std::cout << "Mover E = Derecha" << std::endl;
-    std::cout << "Ataca = Atacas al personaje en cuestion en el cuarto" << std::endl;
+    std::cout << "attack = attacks al personaje en cuestion en el cuarto" << std::endl;
     std::cout << "take + Objeto = Agarrar objeto de cuarto" << std::endl;
     std::cout << "useItem + Objeto = Utilizar un objeto del inventory" << std::endl;
     std::cout << "inventory = Te imprime tu inventory" << std::endl;

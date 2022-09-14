@@ -8,12 +8,12 @@
 #include "printMap.h"
 #include "takeCommand.h"
 #include "inventory.h"
-#include "Ataca.h"
+#include "attack.h"
 #include "Parser.h"
 #include "Starbucks.h"
 #include "pen.h"
 #include "NPC.h"
-#include "Comerciante.h"
+#include "seller.h"
 #include "useItem.h"
 
 class Game {

@@ -1,22 +1,22 @@
-#include "Ataca.h"
+#include "attack.h"
 
-Ataca::Ataca(Character* _personaje):Command("Ataca", ""){
+attack::attack(Character* _personaje):Command("attack", ""){
     Personaje = _personaje; 
 }
 
-void Ataca::execute(){
-    Ataca::setAtributos();
+void attack::execute(){
+    attack::setAtributos();
     system("clear");
     std::cout << "\nFIGHT!!!!\n" << std::endl;
     std::cout << "Tu contricante es: " << Enemigo->getNombre() << std::endl;
     std::cout << "Daño: " << std::to_string(Enemigo->getDano()) << "   " << "Protección: " << std::to_string(Enemigo->getprotection()) << "\n" << std::endl;
     Enemigo->setVida((Enemigo->getVida()- Personaje->getAtaque()));
-    Ataca::imprimevidaNPC(Enemigo);
+    attack::imprimevidaNPC(Enemigo);
     std::cout << "\n" << std::endl;
     std::cout << "\n" << std::endl;
     std::cout << "\n" << std::endl;
-    Ataca::enemigoAtaca();
-    Ataca::imprimevida(Personaje);
+    attack::enemigoattack();
+    attack::imprimevida(Personaje);
     std::cout << "\n" << std::endl;
     std::cout << "Tu mero: " << Personaje->getNombre() << std::endl;
     std::cout << "Daño: " << std::to_string(Personaje->getAtaque()) << "   " << "Protección: " << std::to_string(Personaje->getprotection()) << "\n" << std::endl;
@@ -30,7 +30,7 @@ void Ataca::execute(){
 }
 
 
-void Ataca::imprimevidaNPC(NPC* npc){
+void attack::imprimevidaNPC(NPC* npc){
     std::cout << npc->getVIDAC() << "/" << std::to_string(npc->getVida()) << ":  ";
     for(int i = 0; i < npc->getVida(); i++){
         std::cout << "#";
@@ -40,7 +40,7 @@ void Ataca::imprimevidaNPC(NPC* npc){
     }
     std::cout << "\n";
 }
-void Ataca::imprimevida(Character* per){
+void attack::imprimevida(Character* per){
     std::cout << per->getVIDAC() << "/" <<std::to_string(per->getVida()) << ":  ";
     for(int i = 0; i < per->getVida(); i++){
         std::cout << "#";
@@ -51,14 +51,14 @@ void Ataca::imprimevida(Character* per){
     std::cout << "\n";
 }
 
-void Ataca::setAtributos(){
+void attack::setAtributos(){
     Enemigo = Personaje->getPosicion()->getNPC();
 }
 
-void Ataca::enemigoAtaca(){
+void attack::enemigoattack(){
     srand(time(NULL));
-    int Atacar = 0 + rand() % (1 - 0 + 1);
-    if (Atacar == 1){
+    int attackr = 0 + rand() % (1 - 0 + 1);
+    if (attackr == 1){
         Personaje->setVida(Personaje->getVida()-Enemigo->getDano());
     }
 }

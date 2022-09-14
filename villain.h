@@ -1,14 +1,14 @@
-#ifndef VILLANO_H
-#define VILLANO_H
+#ifndef villain_H
+#define villain_H
 
 #include <iostream>
 #include "Item.h"
 #include "NPC.h"
 
-class Villano: public NPC{
+class villain: public NPC{
     public:
-        Villano();
-        Villano(std::string, int, int, int, Item*, int);
+        villain();
+        villain(std::string, int, int, int, Item*, int);
 
         void setRecompensa(Item*);
         Item* getRecompensa();
