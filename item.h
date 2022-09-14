@@ -20,7 +20,7 @@ class Item{
         void setNombre(std::string);
         void setPeso(int);
         virtual void imprimirItem();
-        virtual int ejecuta();
+        virtual int execute();
 };
 
 #endif

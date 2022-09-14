@@ -4,14 +4,14 @@
 #include <iostream>
 #include <random>
 #include <ctime>
-#include "Comando.h"
+#include "Command.h"
 #include "Character.h"
 #include "NPC.h"
 
-class Ataca: public Comando{
+class Ataca: public Command{
     public:
         Ataca(Character*);
-        void ejecuta();
+        void execute();
         void imprimevida(Character*);
         void imprimevidaNPC(NPC*);
         void setAtributos();

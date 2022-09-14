@@ -9,10 +9,10 @@ class Parser {
     public:
         Parser();
         Parser(ListaPalabras*);
-        ListaPalabras* getComandos();
-        Comando* generaComando();
+        ListaPalabras* getcommand();
+        Command* generaCommand();
     private:
-        ListaPalabras* comandos;
+        ListaPalabras* command;
 };
 
 #endif //PARSER_H

@@ -1,10 +1,10 @@
 #include "Ataca.h"
 
-Ataca::Ataca(Character* _personaje):Comando("Ataca", ""){
+Ataca::Ataca(Character* _personaje):Command("Ataca", ""){
     Personaje = _personaje; 
 }
 
-void Ataca::ejecuta(){
+void Ataca::execute(){
     Ataca::setAtributos();
     system("clear");
     std::cout << "\nFIGHT!!!!\n" << std::endl;
@@ -25,7 +25,7 @@ void Ataca::ejecuta(){
         Enemigo->getRecompensa()->imprimirItem();
         Enemigo->setVida(Enemigo->getVIDAC());
         Personaje->agregarItem(Enemigo->getRecompensa());
-        std::cout << "Puedes ver este item en tu inventario usando el comando Inventario" << std::endl;
+        std::cout << "Puedes ver este item en tu inventario usando el Command Inventario" << std::endl;
     }
 }
 

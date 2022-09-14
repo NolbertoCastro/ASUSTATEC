@@ -2,15 +2,15 @@
 #define USAR_H
 
 #include <iostream>
-#include "Comando.h"
+#include "Command.h"
 #include "Character.h"
 #include "Item.h"
 #include "Room.h"
 
-class Usar: public Comando{
+class Usar: public Command{
     public:
         Usar(Character*);
-        void ejecuta();
+        void execute();
     private:
         Character* Personaje;
 };

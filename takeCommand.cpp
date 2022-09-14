@@ -1,13 +1,13 @@
-#include "TomaComando.h"
+#include "takeCommand.h"
 
 
-TomaComando::TomaComando(Character* personaje):Comando("Toma", ""){
+takeCommand::takeCommand(Character* personaje):Command("take", ""){
     jugador=personaje;
 }
 
-void TomaComando::ejecuta(){
+void takeCommand::execute(){
     if (!tieneSegPalabra()){
-        std::cout<<"Que quieres tomar de la habitación?...\n" << "no puedo ayudarte si no me das toda la información..." << std::endl;
+        std::cout<<"Que quieres taker de la habitación?...\n" << "no puedo helprte si no me das toda la información..." << std::endl;
     }
     else{
         std::string cosa = getSegPalabra();

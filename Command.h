@@ -1,20 +1,20 @@
-#ifndef COMANDO_H
-#define COMANDO_H
+#ifndef Command_H
+#define Command_H
 #include <iostream>
 
-class Comando
+class Command
 {
     public:
-        Comando();
-        Comando(std::string, std::string);
-        std::string getComando() const;
+        Command();
+        Command(std::string, std::string);
+        std::string getCommand() const;
         std::string getSegPalabra() const;
         void setSegPalabra(std::string);
         bool desconocido();
         bool tieneSegPalabra();
-        virtual void ejecuta() = 0;
+        virtual void execute() = 0;
     private:
-        std::string comando;
+        std::string Command;
         std::string segPalabra;
 };
 

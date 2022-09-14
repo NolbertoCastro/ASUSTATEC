@@ -3,24 +3,24 @@
 using namespace std;
 
 Game::Game(){
-    creaElementos();
-    creaComandos();
+    createElements();
+    createComands();
 }
 
-void Game::creaComandos(){
-    ListaPalabras* comandos=parser.getComandos();
-    comandos->agregaComando("Mover", new DesplazaComando(personaje));
-    comandos->agregaComando("Toma", new TomaComando(personaje));
-    comandos->agregaComando("Ayuda", new AyudaComando(comandos));
-    comandos->agregaComando("ImprimeMapa", new ImprimeMapa(personaje));
-    comandos->agregaComando("Inventario", new Inventario(personaje));
-    comandos->agregaComando("Ataca", new Ataca(personaje));
-    comandos->agregaComando("Usar", new Usar(personaje));
+void Game::createComands(){
+    ListaPalabras* command=parser.getcommand(); 
+    command->addCommand("Mover", new moveCommand(personaje));
+    command->addCommand("take", new takeCommand(personaje));
+    command->addCommand("help", new helpCommand(command));
+    command->addCommand("printMap", new printMap(personaje));
+    command->addCommand("Inventario", new Inventario(personaje));
+    command->addCommand("Ataca", new Ataca(personaje));
+    command->addCommand("Usar", new Usar(personaje));
 }
 
 /*crea todos los elementos que están presentes en el juego 
 y los configura (cuartos sus salidas y que objetos hay en cada room)*/
-void Game::creaElementos(){
+void Game::createElements(){
     //Definimos Lugares
     Pasillo = new Room("Pasillo1, no hay nada", false);
     Pasillo2 = new Room("Pasillo2, no hay nada", false);
@@ -62,7 +62,7 @@ void Game::creaElementos(){
     Oficina->setNPC(Agente47);
 }
 
-void Game::imprimeBienvenida(){
+void Game::printWelcome(){
     std::cout << "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░" << std::endl;
     std::cout << "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░" << std::endl;
     std::cout << "░░░░░░░░░░█░░░░░░█░░░█░░░█░░░░░██░░░██████░░███░░░████████░░██████░░░░░█░░░░░░" << std::endl;
@@ -111,35 +111,35 @@ void Game::imprimeBienvenida(){
 
     std::cout << "\nEmpezarás en al inicio del pasillo localizado al lado del cuarto #5, tendrás que recorrer los cuartos, vencer enemigos, comprar objetos." << std::endl;
     std::cout << "\nTodo con el objetivo de conseguir la tarjeta de alumno tec para acceder al elevador." << std::endl;
-    std::cout << "\nPara poder desplazarte por el mapa podras usar los siguientes comandos:" << std::endl;
+    std::cout << "\nPara poder moverte por el mapa podras usar los siguientes command:" << std::endl;
 
-    std::cout << "\nAyuda = Imprimir los comandos disponibles" << std::endl;
+    std::cout << "\nhelp = Imprimir los command disponibles" << std::endl;
     std::cout << "Mover N = Arriba" << std::endl;
     std::cout << "Mover S = Abajo" << std::endl;
     std::cout << "Mover O = Izquierda" << std::endl;
     std::cout << "Mover E = Derecha" << std::endl;
     std::cout << "Ataca = Atacas al personaje en cuestion en el cuarto" << std::endl;
-    std::cout << "Toma + Objeto = Agarrar objeto de cuarto" << std::endl;
+    std::cout << "take + Objeto = Agarrar objeto de cuarto" << std::endl;
     std::cout << "Usar + Objeto = Utilizar un objeto del inventario" << std::endl;
     std::cout << "Inventario = Te imprime tu inventario" << std::endl;
     std::cout << "ImprimeMapa = Te despliega el mapa y tu posición actual" << std::endl;
-    std::cout << "Si necesitas ayuda teclea la palabra: ayuda\n" << std::endl;
+    std::cout << "Si necesitas help teclea la palabra: help\n" << std::endl;
 }
 
 void Game::play(){
-    imprimeBienvenida();
+    printWelcome();
     bool finished = false;
     while (!finished) {
-        Comando* comando = parser.generaComando();
-        finished = procesaComando(comando);
+        Command* Command = parser.generaCommand();
+        finished = processComand(Command);
     }
     std::cout << "Gracias por jugar este juego de aventura te esperamos a la siguiente en ASUSTATEC" << std::endl;
     std::cout << "Donde damos sustos que dan gusto" << std::endl;
 }
 
-bool Game::procesaComando(Comando* instr){
+bool Game::processComand(Command* instr){
     bool salio = false;
-    instr->ejecuta(); // se esta ejecutando polimorfismo
+    instr->execute(); // se esta ejecutando polimorfismo
     
     if(personaje->getPosicion()==Elevador){
         if(personaje->buscaItem("Llave")){

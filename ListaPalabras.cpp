@@ -3,12 +3,12 @@
 
 ListaPalabras::ListaPalabras(){}
 
-void ListaPalabras::agregaComando(std::string pal, Comando* com){
+void ListaPalabras::addCommand(std::string pal, Command* com){
     palabras.push_back(pal);
-    comandos.push_back(com);
+    command.push_back(com);
 }
 
-int ListaPalabras::esComando(std::string pal){
+int ListaPalabras::esCommand(std::string pal){
     for(int i=0; i<palabras.size(); i++){
         if (palabras[i]==pal){
             return i;
@@ -17,23 +17,23 @@ int ListaPalabras::esComando(std::string pal){
     return -1;
 }
 
-Comando* ListaPalabras::getComando(std::string pal){
-    int pos=esComando(pal);
+Command* ListaPalabras::getCommand(std::string pal){
+    int pos=esCommand(pal);
     if(pos>=0){
-        return comandos[pos];
+        return command[pos];
     }
     return nullptr;
 }
 
-std::string ListaPalabras::todosLosComandos(){
-    std::string todos="Los comandos que puedes usar son:\n";
+std::string ListaPalabras::todosLoscommand(){
+    std::string todos="Los command que puedes usar son:\n";
     for(std::string &pal:palabras){
         todos += "\t"+ pal + "\n";
     }
-    todos+= "\t->El comando va seguido de una segunda palabra\n";
-    todos+= "\t->Los comandos solos son:\n";
+    todos+= "\t->El Command va seguido de una segunda palabra\n";
+    todos+= "\t->Los command solos son:\n";
     todos+= "\t\t->Ataca\n";
-    todos+= "\t\t->Ayuda\n";
+    todos+= "\t\t->help\n";
     todos+= "\t\t->Inventario\n";
     todos+= "\t\t->ImprimeMapa\n";
     return todos;

@@ -3,10 +3,10 @@
 #include <iostream>
 
 #include "Room.h"
-#include "DesplazaComando.h"
-#include "AyudaComando.h"
-#include "ImprimeMapa.h"
-#include "TomaComando.h"
+#include "moveCommand.h"
+#include "helpCommand.h"
+#include "printMap.h"
+#include "takeCommand.h"
 #include "Inventario.h"
 #include "Ataca.h"
 #include "Parser.h"
@@ -19,11 +19,11 @@
 class Game {
     public:
         Game();
-        void creaElementos();
-        void creaComandos();
+        void createElements();
+        void createComands();
         void play();
-        bool procesaComando(Comando*);
-        void imprimeBienvenida();
+        bool processComand(Command*);
+        void printWelcome();
     private:
         Parser parser;
         Character* personaje;

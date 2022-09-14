@@ -1,15 +1,15 @@
 #include "Parser.h"
 
 Parser::Parser(){
-    comandos=new ListaPalabras;
+    command=new ListaPalabras;
 }
 
 
-ListaPalabras* Parser::getComandos(){
-    return comandos;
+ListaPalabras* Parser::getcommand(){
+    return command;
 }
 
-Comando* Parser::generaComando(){
+Command* Parser::generaCommand(){
     
     std::string instruccion, primera, segunda;
     std::cout << ">>>>";
@@ -19,9 +19,9 @@ Comando* Parser::generaComando(){
     sstr >> segunda;
     sstr.ignore();
 
-    // Excepción si el comando es erroneo
+    // Excepción si el Command es erroneo
     try  {
-       Comando* com=comandos->getComando(primera);
+       Command* com=command->getCommand(primera);
        if(com){
         com->setSegPalabra(segunda);
         return com;
@@ -29,8 +29,8 @@ Comando* Parser::generaComando(){
         throw com;
        }
     }
-    catch (Comando* error)  {
+    catch (Command* error)  {
         std::cout << "Ingresaste un valor erroneo\n";
-        std::cout << "Ingresa un comando valido por favor\n";
+        std::cout << "Ingresa un Command valido por favor\n";
     }
 }

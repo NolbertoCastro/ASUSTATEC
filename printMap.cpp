@@ -1,10 +1,10 @@
-#include "ImprimeMapa.h"
+#include "printMap.h"
 
-ImprimeMapa::ImprimeMapa(Character* personaje):Comando("ImprimeMapa", ""){
+printMap::printMap(Character* personaje):Command("printMap", ""){
     Personaje = personaje;
 }
 
-void ImprimeMapa::ejecuta(){
+void printMap::execute(){
     std::cout << "\n***************" << std::endl;
     std::cout << "*░░░**░░░**░░░*" << std::endl;
     std::cout << "*░O░░░░3░░░░E░*" << std::endl;
@@ -27,5 +27,5 @@ void ImprimeMapa::ejecuta(){
     // std::cout << "*░░░**░░░*" << std::endl;
     // std::cout << "**********" << std::endl;
 
-    std::cout << "Estas en el cuarto: " << Personaje->getPosicion()->getDescripcion() << std::endl;
+    std::cout << "You're in the room: " << Personaje->getPosicion()->getDescripcion() << std::endl;
 }

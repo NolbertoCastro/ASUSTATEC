@@ -3,18 +3,18 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "Comando.h"
+#include "Command.h"
 
 class ListaPalabras{
     public:
         ListaPalabras();
-        void agregaComando(std::string, Comando*);
-        int esComando(std::string);
-        Comando* getComando(std::string);
-        std::string todosLosComandos();
+        void addCommand(std::string, Command*);
+        int esCommand(std::string);
+        Command* getCommand(std::string);
+        std::string todosLoscommand();
 
     private:
         std::vector <std::string> palabras;
-        std::vector <Comando*> comandos;
+        std::vector <Command*> command;
 };
 #endif //ListaPalabras_H

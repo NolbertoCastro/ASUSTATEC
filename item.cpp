@@ -41,4 +41,4 @@ void Item::imprimirItem(){
     std::cout << "Descripción: " << descripcion << std::endl;
 }
 
-int Item::ejecuta(){return 0;}
+int Item::execute(){return 0;}

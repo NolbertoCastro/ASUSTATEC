@@ -1,12 +1,12 @@
-#include "DesplazaComando.h"
+#include "moveCommand.h"
 
-DesplazaComando::DesplazaComando(Character* personaje):Comando("desplaza", ""){
+moveCommand::moveCommand(Character* personaje):Command("move", ""){
     jugador=personaje;
 }
 
-void DesplazaComando::ejecuta(){
+void moveCommand::execute(){
     if (!tieneSegPalabra()){
-        std::cout<<"A donde quieres ir?... sin direccion no puedo ayudarte..." << std::endl;
+        std::cout<<"A donde quieres ir?... sin direccion no puedo helprte..." << std::endl;
     }
     else{
         std::string direc = getSegPalabra();
