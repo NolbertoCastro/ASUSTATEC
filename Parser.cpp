@@ -10,6 +10,7 @@ ListaPalabras* Parser::getComandos(){
 }
 
 Comando* Parser::generaComando(){
+    
     std::string instruccion, primera, segunda;
     std::cout << ">>>>";
     std::getline(std::cin, instruccion);
