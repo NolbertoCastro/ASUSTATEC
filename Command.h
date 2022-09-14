@@ -8,14 +8,14 @@ class Command
         Command();
         Command(std::string, std::string);
         std::string getCommand() const;
-        std::string getSegPalabra() const;
-        void setSegPalabra(std::string);
-        bool desconocido();
-        bool tieneSegPalabra();
+        std::string getprompt() const;
+        void setprompt(std::string);
+        bool unKnown();
+        bool tieneprompt();
         virtual void execute() = 0;
     private:
         std::string command;
-        std::string segPalabra;
+        std::string prompt;
 };
 
 #endif

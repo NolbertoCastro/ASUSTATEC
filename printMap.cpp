@@ -27,5 +27,5 @@ void printMap::execute(){
     // std::cout << "*░░░**░░░*" << std::endl;
     // std::cout << "**********" << std::endl;
 
-    std::cout << "You're in the room: " << Personaje->getPosicion()->getDescripcion() << std::endl;
+    std::cout << "You're in the room: " << Personaje->getPosition()->getDescription() << std::endl;
 }

@@ -6,15 +6,15 @@
 
 class protection:public Item{
     private:
-        int protection;
+        int protectionValue;
 
     public:
         protection();
         protection(std::string, std::string, int, int);
 
-        int getprotection() const;
+        int getProtection() const;
 
-        void setprotection(int);
+        void setProtection(int);
 };
 
 #endif

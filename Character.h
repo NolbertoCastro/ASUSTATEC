@@ -9,41 +9,41 @@
 
 class Character{
     private:
-        std::string nombre;
-        int vida, ataque, dinero, protection, VIDAC;
-        Room* RoomActual;
+        std::string name;
+        int health, attack, money, protection, HealthC;
+        Room* actualRoom;
         std::vector <Item*> inventory;
     public:
         Character();
         Character(std::string, int, Room*, int, int, int, int);
 
-        std::string getNombre() const;
-        int getVida();
-        Room* getPosicion();
-        std::vector <Item*> getinventory() const;
-        int getAtaque() const;
-        int getDinero() const;
-        int getVIDAC();
-        int getprotection() const;
+        std::string getName() const;
+        int getHealth();
+        Room* getPosition();
+        std::vector <Item*> getInventory() const;
+        int getAttack() const;
+        int getMoney() const;
+        int getHealthC();
+        int getProtection() const;
         Item* getItem(std::string);
-        void expulsarItem(std::string);
+        void deleteItem(std::string);
 
-        void setNombre(std::string);
-        void setVida(int);
+        void setName(std::string);
+        void setHealth(int);
         void setPosicion(Room*);
-        void setinventory(std::vector <Item*>);
-        void setAtaque(int);
-        void setDinero(int);
-        void setVIDAC(int);
-        void setprotection(int);
+        void setInventory(std::vector <Item*>);
+        void setAttack(int);
+        void setMoney(int);
+        void setHealthC(int);
+        void setProtection(int);
 
-        void agregarItem(Item*);
-        void consultaItem(std::string);
+        void addItem(Item*);
+        void itemDescription(std::string);
 
-        void imprime();
-        void imprimeinventory();
-        bool buscaItem(std::string);
-        bool camina(std::string);
+        void print();
+        void printInventory();
+        bool searchItem(std::string);
+        bool move(std::string);
 
         int operator+(Item*); 
 };

@@ -1,14 +1,14 @@
 #include "Room.h"
 
 Room::Room(){
-    descripcion="Es una habitacion sin nombre";
+    description="Es una habitacion sin name";
     for (int i=0; i<4; i++){
         salidas[i]=nullptr;
     }
     tieneLlave=false;
 }
 Room::Room(std::string desc, bool cerrado){
-    descripcion=desc;
+    description=desc;
     for (int i=0; i<4; i++){
         salidas[i]=nullptr;
     }
@@ -30,8 +30,8 @@ void Room::setSalidas(Room* n, Room* s, Room* e, Room* o){
     salidas[3]=o;
 }
 
-std::string Room::getDescripcion(){
-    return descripcion;
+std::string Room::getDescription(){
+    return description;
 }
 
 Item* Room::getItem(int num){
@@ -47,9 +47,9 @@ bool Room::requiereLlave(){
 void Room::agregaItem(Item* cosita){
     cosas.push_back(cosita);
 }
-int Room::buscaItem(std::string que){
+int Room::searchItem(std::string que){
     for(int i=0; i<cosas.size();i++){
-        if(cosas[i]->getNombre()==que){
+        if(cosas[i]->getName()==que){
             return i; //devuelve la posición donde está ese objeto
         }
     }
@@ -60,11 +60,11 @@ void Room::sacaItem(int pos){
     cosas.erase(cosas.begin()+pos); //Borra el de la posicion pos del vector
 }
 
-void Room::descripcionLarga(){
-    std::cout << descripcion << std::endl;
+void Room::descriptionLarga(){
+    std::cout << description << std::endl;
     std::cout << "Dentro de esta habitacion enigmatica tenemos: " << std::endl;
     for (int i=0; i<cosas.size(); i++){
-        std::cout << cosas[i]->getDescripcion() << std::endl;
+        std::cout << cosas[i]->getDescription() << std::endl;
     }
 }
 

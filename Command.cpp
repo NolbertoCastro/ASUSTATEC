@@ -2,30 +2,30 @@
 
 Command::Command(){
     command = "";
-    segPalabra="";
+    prompt="";
 }
 
-Command::Command(std::string com, std::string seg){
-    command = com;
-    segPalabra=seg;
+Command::Command(std::string commandWord, std::string promptWord){
+    command = commandWord;
+    prompt= promptWord;
 }
 
 std::string Command::getCommand() const{
     return command;
 }
 
-std::string Command::getSegPalabra() const{
-    return segPalabra;
+std::string Command::getprompt() const{
+    return prompt;
 }
 
-void Command::setSegPalabra(std::string seg){
-    segPalabra=seg;
+void Command::setprompt(std::string promptWord){
+    prompt=promptWord;
 }
 
-bool Command::desconocido(){
+bool Command::unKnown(){
     return command =="";
 }
 
-bool Command::tieneSegPalabra(){
-    return segPalabra!="";
+bool Command::tieneprompt(){
+    return prompt!="";
 }

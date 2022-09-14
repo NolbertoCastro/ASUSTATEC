@@ -1,17 +1,17 @@
 #include "protection.h"
 
 protection::protection(){
-    protection = 0;
+    protectionValue = 0;
 }
 
-protection::protection(std::string _nombre, std::string _descripcion, int _peso, int _protection):Item(_nombre, _descripcion, _peso){
-    protection = _protection;
+protection::protection(std::string _name, std::string _description, int _peso, int _protection):Item(_name, _description, _peso){
+    protectionValue = _protection;
 }
 
-int protection::getprotection() const{
-    return protection;
+int protection::getProtection() const{
+    return protectionValue;
 }
 
-void protection::setprotection(int _protection){
-    protection = _protection;
+void protection::setProtection(int _protection){
+    protectionValue = _protection;
 }

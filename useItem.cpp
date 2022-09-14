@@ -5,20 +5,20 @@ useItem::useItem(Character* personaje):Command("useItem", ""){
 }
 
 void useItem::execute(){
-    if (!tieneSegPalabra()){
+    if (!tieneprompt()){
         std::cout<< "¿Qué quieres useItem?, debes especificarme que objeto quieres" << std::endl;
     }
     else{
-        std::string cosa = getSegPalabra();
+        std::string cosa = getprompt();
         Item* cosita = Personaje->getItem(cosa); //veo si está en el cuarto (posicion dentro del vector)
-        Personaje->expulsarItem(cosa);
-        if (cosa == cosita->getNombre()){
+        Personaje->deleteItem(cosa);
+        if (cosa == cosita->getName()){
             if (cosa == "Starbucks"){
-                Personaje->setVIDAC(Personaje->getVida()+cosita->execute());
-                Personaje->setVida(Personaje->getVida()+cosita->execute());
-                std::cout << "El starbucks te aporto una vida de +" << std::to_string(cosita->execute()) << std::endl;
+                Personaje->setHealthC(Personaje->getHealth()+cosita->execute());
+                Personaje->setHealth(Personaje->getHealth()+cosita->execute());
+                std::cout << "El starbucks te aporto una health de +" << std::to_string(cosita->execute()) << std::endl;
             } else if (cosa == "pen"){
-                Personaje->setAtaque(*Personaje + cosita);
+                Personaje->setAttack(*Personaje + cosita);
                 std::cout << "La pen te aporta mayor daño ahora golpeas con +" << std::to_string(cosita->execute()) << std::endl;
             }
         } else {

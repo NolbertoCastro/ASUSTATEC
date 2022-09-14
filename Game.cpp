@@ -92,7 +92,7 @@ void Game::printWelcome(){
     std::cout << "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░" << std::endl;
 
     std::cout << "\nBienvenido a ASUSTATEC el videojuego de Terror en el Tecnologico de Monterrey" << std::endl;
-    std::cout << "\nEn este videojuego tendrás que pelear contra enemigos, ganar dinero y comprar items para mejorar tu personaje." << std::endl;
+    std::cout << "\nEn este videojuego tendrás que pelear contra enemigos, ganar money y comprar items para mejorar tu personaje." << std::endl;
     std::cout << "\nPara ganar tendrás que ganar/comprar una tarjeta de alumno tec para acceder al elevador y ganar, a continuación te mostramos el mapa."  << std::endl;
 
     std::cout << "\n***************" << std::endl;
@@ -121,8 +121,8 @@ void Game::printWelcome(){
     std::cout << "attack = attacks al personaje en cuestion en el cuarto" << std::endl;
     std::cout << "take + Objeto = Agarrar objeto de cuarto" << std::endl;
     std::cout << "useItem + Objeto = Utilizar un objeto del inventory" << std::endl;
-    std::cout << "inventory = Te imprime tu inventory" << std::endl;
-    std::cout << "ImprimeMapa = Te despliega el mapa y tu posición actual" << std::endl;
+    std::cout << "inventory = Te print tu inventory" << std::endl;
+    std::cout << "printMapa = Te despliega el mapa y tu posición actual" << std::endl;
     std::cout << "Si necesitas help teclea la palabra: help\n" << std::endl;
 }
 
@@ -141,8 +141,8 @@ bool Game::processComand(Command* instr){
     bool salio = false;
     instr->execute(); // se esta ejecutando polimorfismo
     
-    if(personaje->getPosicion()==Elevador){
-        if(personaje->buscaItem("Llave")){
+    if(personaje->getPosition()==Elevador){
+        if(personaje->searchItem("Llave")){
             salio = true;
         }
         else{

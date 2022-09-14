@@ -12,8 +12,8 @@ class attack: public Command{
     public:
         attack(Character*);
         void execute();
-        void imprimevida(Character*);
-        void imprimevidaNPC(NPC*);
+        void printHealth(Character*);
+        void printHealthNPC(NPC*);
         void setAtributos();
         void enemigoattack();
     private:

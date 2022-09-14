@@ -3,9 +3,9 @@
 
 wordList::wordList(){}
 
-void wordList::addCommand(std::string pal, Command* com){
+void wordList::addCommand(std::string pal, Command* commandWord){
     palabras.push_back(pal);
-    command.push_back(com);
+    command.push_back(commandWord);
 }
 
 int wordList::esCommand(std::string pal){
@@ -25,7 +25,7 @@ Command* wordList::getCommand(std::string pal){
     return nullptr;
 }
 
-std::string wordList::todosLoscommand(){
+std::string wordList::allCommands(){
     std::string todos="Los command que puedes useItem son:\n";
     for(std::string &pal:palabras){
         todos += "\t"+ pal + "\n";
@@ -35,6 +35,6 @@ std::string wordList::todosLoscommand(){
     todos+= "\t\t->attack\n";
     todos+= "\t\t->help\n";
     todos+= "\t\t->inventory\n";
-    todos+= "\t\t->ImprimeMapa\n";
+    todos+= "\t\t->printMapa\n";
     return todos;
 }

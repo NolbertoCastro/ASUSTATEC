@@ -4,22 +4,22 @@
 
 class Item{
     private:
-        std::string nombre;
-        std::string descripcion;
-        int peso;
+        std::string name;
+        std::string description;
+        int weight;
 
     public:
         Item();
         Item(std::string, std::string, int);
 
-        std::string getDescripcion() const;
-        std::string getNombre() const;
-        int getPeso() const;
+        std::string getDescription() const;
+        std::string getName() const;
+        int getWeight() const;
 
-        void setDescripcion(std::string);
-        void setNombre(std::string);
-        void setPeso(int);
-        virtual void imprimirItem();
+        void setDescription(std::string);
+        void setName(std::string);
+        void setWeight(int);
+        virtual void printItem();
         virtual int execute();
 };
 

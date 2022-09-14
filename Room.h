@@ -10,7 +10,7 @@ class Room {
     public:
         Room();
         Room(std::string, bool);
-        std::string getDescripcion();
+        std::string getDescription();
         Room* getSalida(std::string);
         int numSalida(std::string);
         void setSalidas(Room*, Room*, Room*, Room*);
@@ -19,11 +19,11 @@ class Room {
         Item* getItem(int);
         void sacaItem(int);
         void agregaItem(Item*);
-        int buscaItem(std::string);
-        void descripcionLarga();
+        int searchItem(std::string);
+        void descriptionLarga();
         bool requiereLlave();
     private:
-        std::string descripcion;
+        std::string description;
         std::vector<Item*> cosas;
         Room* salidas[4];
         bool tieneLlave;

@@ -21,12 +21,12 @@ Command* Parser::generaCommand(){
 
     // Excepción si el Command es erroneo
     try  {
-       Command* com=command->getCommand(primera);
-       if(com){
-        com->setSegPalabra(segunda);
-        return com;
+       Command* commandWord=command->getCommand(primera);
+       if(commandWord){
+        commandWord->setprompt(segunda);
+        return commandWord;
        } else {
-        throw com;
+        throw commandWord;
        }
     }
     catch (Command* error)  {

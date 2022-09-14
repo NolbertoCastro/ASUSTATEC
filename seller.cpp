@@ -1,11 +1,11 @@
 #include "seller.h"
 
-seller::seller(std::string nombre, int vida, int dano, int protection, int VIDAC):NPC(nombre, vida, dano, protection, VIDAC){
+seller::seller(std::string name, int health, int dano, int protection, int HealthC):NPC(name, health, dano, protection, HealthC){
 }
 
-Item* seller::getItem(std::string nombre){
+Item* seller::getItem(std::string name){
     for (int i = 0; i < inventory.size(); i++){
-        if (inventory[i]->getNombre() == nombre){
+        if (inventory[i]->getName() == name){
             return inventory[i];
         } else{
             std::cout << "No cuento con un articulo de ese estilo" << std::endl;

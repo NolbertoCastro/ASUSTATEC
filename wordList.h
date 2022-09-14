@@ -11,7 +11,7 @@ class wordList{
         void addCommand(std::string, Command*);
         int esCommand(std::string);
         Command* getCommand(std::string);
-        std::string todosLoscommand();
+        std::string allCommands();
 
     private:
         std::vector <std::string> palabras;

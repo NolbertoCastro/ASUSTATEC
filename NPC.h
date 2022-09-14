@@ -8,22 +8,22 @@ class NPC{
     public:
         NPC();
         NPC(std::string, int, int, int, int);
-        void setNombre(std::string);
+        void setName(std::string);
         void setDano(int);
-        void setVida(int);
-        void setVIDAC(int);
-        void setprotection(int);
-        int getVIDAC();
+        void setHealth(int);
+        void setHealthC(int);
+        void setProtection(int);
+        int getHealthC();
         Item* getRecompensa();
         void setRecompensa(Item*);
-        std::string getNombre();
+        std::string getName();
         int getDano();
-        int getVida();
-        int getprotection();
+        int getHealth();
+        int getProtection();
 
     private:
-        std::string nombre;
-        int dano, vida, protection, VIDAC;
+        std::string name;
+        int dano, health, protection, HealthC;
         Item* Recompensa;
 
 

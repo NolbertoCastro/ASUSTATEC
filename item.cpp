@@ -1,44 +1,44 @@
 #include "item.h"
 
 Item::Item(){
-    nombre = " ";
-    descripcion = " ";
-    peso = 0;
+    name = " ";
+    description = " ";
+    weight = 0;
 }
 
-Item::Item(std::string _nombre, std::string _descripcion, int _peso){
-    nombre = _nombre;
-    descripcion = _descripcion;
-    peso = _peso;
+Item::Item(std::string _name, std::string _description, int _weight){
+    name = _name;
+    description = _description;
+    weight = _weight;
 }
 
-std::string Item::getDescripcion() const{
-    return descripcion;
+std::string Item::getDescription() const{
+    return description;
 }
 
-std::string Item::getNombre() const{
-    return nombre;
+std::string Item::getName() const{
+    return name;
 }
 
-int Item::getPeso() const{
-    return peso;
+int Item::getWeight() const{
+    return weight;
 }
 
-void Item::setDescripcion(std::string _descripcion){
-    descripcion = _descripcion;
+void Item::setDescription(std::string _description){
+    description = _description;
 }
 
-void Item::setNombre(std::string _nombre){
-    nombre = _nombre;
+void Item::setName(std::string _name){
+    name = _name;
 }
 
-void Item::setPeso(int _peso){
-    peso = _peso;
+void Item::setWeight(int _weight){
+    weight = _weight;
 }
 
-void Item::imprimirItem(){
-    std::cout << nombre << ", Peso: " << peso << std::endl;
-    std::cout << "Descripción: " << descripcion << std::endl;
+void Item::printItem(){
+    std::cout << name << ", Weight: " << weight << std::endl;
+    std::cout << "Description: " << description << std::endl;
 }
 
 int Item::execute(){return 0;}

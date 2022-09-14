@@ -1,43 +1,43 @@
 #include "NPC.h"
 
 NPC::NPC(){
-    setNombre("Carlos");
-    setVida(10);
+    setName("Carlos");
+    setHealth(10);
     setDano(1);
-    setprotection(1);
-    setVIDAC(10);
+    setProtection(1);
+    setHealthC(10);
 }
 
-NPC::NPC(std::string nombre, int vida, int dano, int protection, int _vidac){
-    setNombre(nombre);
-    setVida(vida);
+NPC::NPC(std::string name, int health, int dano, int protection, int _healthc){
+    setName(name);
+    setHealth(health);
     setDano(dano);
-    setprotection(protection);
-    setVIDAC(_vidac);
+    setProtection(protection);
+    setHealthC(_healthc);
 }
-void NPC::setNombre(std::string _nombre){
-    nombre = _nombre;
+void NPC::setName(std::string _name){
+    name = _name;
 }
-void NPC::setDano(int ataque){
-    dano = ataque;
+void NPC::setDano(int attack){
+    dano = attack;
 }
-void NPC::setVida(int _vida){
-    vida = _vida;
+void NPC::setHealth(int _health){
+    health = _health;
 }
-void NPC::setprotection(int _protec){
+void NPC::setProtection(int _protec){
     protection = _protec;
 }
 
-std::string NPC::getNombre(){
-    return nombre;
+std::string NPC::getName(){
+    return name;
 }
 int NPC::getDano(){
     return dano;
 }
-int NPC::getVida(){
-    return vida;
+int NPC::getHealth(){
+    return health;
 }
-int NPC::getprotection(){
+int NPC::getProtection(){
     return protection;
 }
 
@@ -49,10 +49,10 @@ void NPC::setRecompensa(Item* _recomp){
     Recompensa = _recomp;
 }
 
-void NPC::setVIDAC(int vidac){
-    VIDAC = vidac;
+void NPC::setHealthC(int healthc){
+    HealthC = healthc;
 }
 
-int NPC::getVIDAC(){
-    return VIDAC;
+int NPC::getHealthC(){
+    return HealthC;
 }

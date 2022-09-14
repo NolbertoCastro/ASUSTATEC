@@ -3,7 +3,7 @@
 villain::villain(){
 }
 
-villain::villain(std::string nombre, int vida, int dano, int protection, Item* recompensa, int VIDAC):NPC(nombre, vida, dano, protection, VIDAC){
+villain::villain(std::string name, int health, int dano, int protection, Item* recompensa, int HealthC):NPC(name, health, dano, protection, HealthC){
 }
 
 Item* villain::getRecompensa(){
