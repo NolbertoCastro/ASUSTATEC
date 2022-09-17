@@ -22,27 +22,27 @@ void Game::createComands(){
 y los configura (cuartos sus exits y que objetos hay en cada room)*/
 void Game::createElements(){
     //Definimos Lugares
-    Hallway = new Room("Hallway1, no hay nada", false);
-    Hallway2 = new Room("Hallway2, no hay nada", false);
-    Hallway3 = new Room("Hallway3, no hay nada", false);
+    Hallway = new Room("Hallway1, nothing", false);
+    Hallway2 = new Room("Hallway2, nothing", false);
+    Hallway3 = new Room("Hallway3, nothing", false);
     Elevator = new Room("Elevator", true);
-    WC = new Room("WC, hay una pen y un Starbucks", false);
-    Classroom = new Room("Classroom,hace frio, hay un Teus Satanico en el cuarto, si quieres attackrlo y ganar una reward escribe attack", false);
-    Office = new Room("Office, hay un enemigo frio y calculador llamado Agent47 si quieres enfrentarlo y ganar una reward escribe attack", false);
+    WC = new Room("WC, there's a pen and a Starbucks", false);
+    Classroom = new Room("Classroom, it's cold in here, there's an enemy called Teus, if you want to fight with him and win a reward write the command attack", false);
+    Office = new Room("Office, there's a cold and evil enemy in this place called Agent 47, if you want to fight with him and win a reward write the command attack", false);
     //hay un fantasma que te puede vender cosas, Una pen en 500 y Una experiencia (Starbucks) en 600
     
 
     //Definimos Objetos
-    Key=new Item("Key", "Te permitirá utilizar el Elevator y salir del juego", 0);
+    Key=new Item("Key", "Will let you open the Elevator door and win the game", 0);
     P1 = new pen();
     S1 = new Starbucks();
     S2 = new Starbucks();
 
     //Definimos personajes
-    Seller = new seller("seller", 0, 0, 0, 0);
-    Teus = new NPC("Teus Satanico", 30, 5, 1, 30);
-    Agent47 = new NPC("AGENTE 47", 10, 3, 1, 10);
-    Player=new Character("Conserje", 20, Hallway, 3 , 800, 1, 20);
+    Seller = new seller("Seller", 0, 0, 0, 0);
+    Teus = new NPC("Teus Monster", 30, 5, 1, 30);
+    Agent47 = new NPC("AGENT 47", 10, 3, 1, 10);
+    Player=new Character("Janitor", 20, Hallway, 3 , 800, 1, 20);
 
     //Definimos Recompenas
     Teus->setReward(Key);
@@ -54,8 +54,8 @@ void Game::createElements(){
     WC->setexits(nullptr,nullptr,Hallway,nullptr);
     Classroom->setexits(nullptr,nullptr,Hallway2,nullptr);
     Office->setexits(nullptr,nullptr,Hallway3,nullptr);
-    WC->agregaItem(S1);
-    WC->agregaItem(P1);
+    WC->addItem(S1);
+    WC->addItem(P1);
     
     // Ponemos NPC'S en sus cuartos
     Classroom->setNPC(Teus);
@@ -91,9 +91,9 @@ void Game::printWelcome(){
     std::cout << "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░" << std::endl;
     std::cout << "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░" << std::endl;
 
-    std::cout << "\nBienvenido a ASUSTATEC el videojuego de Terror en el Tecnologico de Monterrey" << std::endl;
-    std::cout << "\nEn este videojuego tendrás que pelear contra enemigos, ganar money y comprar items para mejorar tu Player." << std::endl;
-    std::cout << "\nPara ganar tendrás que ganar/comprar una tarjeta de alumno tec para acceder al Elevator y ganar, a continuación te mostramos el mapa."  << std::endl;
+    std::cout << "\nWelcome to ASUSTATEC the horror videogame inside the Monterrey Institute of Technology and Higher Education" << std::endl;
+    std::cout << "\nThrough all the gamplay you'll fight monsters, earn money and buy items to defeat the monsters easelier" << std::endl;
+    std::cout << "\nTo win you'll have to buy or get as a reward the access card of a tec student to get in the elevator and scape, let me show you the game map."  << std::endl;
 
     std::cout << "\n***************" << std::endl;
     std::cout << "*░░░**░░░**░░░*" << std::endl;
@@ -101,29 +101,29 @@ void Game::printWelcome(){
     std::cout << "*░░░**░░░**░░░*" << std::endl;
     std::cout << "******░░░******" << std::endl;
     std::cout << "*░░░**░░░*" << std::endl;
-    std::cout << "*░S░░░░2░*" << std::endl;
+    std::cout << "*░C░░░░2░*" << std::endl;
     std::cout << "*░░░**░░░*" << std::endl;
     std::cout << "******░░░*" << std::endl;
     std::cout << "*░░░**░░░*" << std::endl;
-    std::cout << "*░B░░░░1░*" << std::endl;
+    std::cout << "*░W░░░░1░*" << std::endl;
     std::cout << "*░░░**░░░*" << std::endl;
     std::cout << "**********" << std::endl;
 
-    std::cout << "\nEmpezarás en al inicio del Hallway localizado al lado del cuarto #5, tendrás que recorrer los cuartos, vencer enemigos, comprar objetos." << std::endl;
-    std::cout << "\nTodo con el objetivo de conseguir la tarjeta de alumno tec para acceder al Elevator." << std::endl;
-    std::cout << "\nPara poder moverte por el mapa podras useItem los siguientes command:" << std::endl;
+    std::cout << "\nYou will start in the begining of a 5th floor Hallway, you'll have to move through rooms to defeat enemies and buy items" << std::endl;
+    std::cout << "\nThe objective is to get the access card of a tec student to open the elevator and get out" << std::endl;
+    std::cout << "\nTo play this game you can use the following commands: " << std::endl;
 
-    std::cout << "\nhelp = Imprimir los command disponibles" << std::endl;
-    std::cout << "Mover N = Arriba" << std::endl;
-    std::cout << "Mover S = Abajo" << std::endl;
-    std::cout << "Mover O = Izquierda" << std::endl;
-    std::cout << "Mover E = Derecha" << std::endl;
-    std::cout << "attack = attacks al Player en cuestion en el cuarto" << std::endl;
-    std::cout << "take + Objeto = Agarrar objeto de cuarto" << std::endl;
-    std::cout << "useItem + Objeto = Utilizar un objeto del inventory" << std::endl;
-    std::cout << "inventory = Te print tu inventory" << std::endl;
-    std::cout << "printMapa = Te despliega el mapa y tu posición actual" << std::endl;
-    std::cout << "Si necesitas help teclea la palabra: help\n" << std::endl;
+    std::cout << "\nhelp = print all the available commands" << std::endl;
+    std::cout << "Move N = Up" << std::endl;
+    std::cout << "Move S = Down" << std::endl;
+    std::cout << "Move W = left" << std::endl;
+    std::cout << "Move E = Right" << std::endl;
+    std::cout << "attack = attacks the villain in the room you're at" << std::endl;
+    std::cout << "take + (item name) = Take items from the room you're at" << std::endl;
+    std::cout << "useItem + (item name) = Use an item in your inventory" << std::endl;
+    std::cout << "inventory = prints all the items in your inventory" << std::endl;
+    std::cout << "printMapa = prints the game map" << std::endl;
+    std::cout << "If you need help only write: help\n" << std::endl;
 }
 
 void Game::play(){

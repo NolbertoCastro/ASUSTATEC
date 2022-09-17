@@ -35,8 +35,8 @@ std::string Room::getDescription(){
 }
 
 Item* Room::getItem(int num){
-    if (num>=0 && num<cosas.size()){
-        return cosas[num];
+    if (num>=0 && num<stuff.size()){
+        return stuff[num];
     }
     return nullptr;
 }
@@ -44,27 +44,27 @@ bool Room::keyRequired(){
     return tieneLlave;
 }
 
-void Room::agregaItem(Item* cosita){
-    cosas.push_back(cosita);
+void Room::addItem(Item* cosita){
+    stuff.push_back(cosita);
 }
 int Room::searchItem(std::string que){
-    for(int i=0; i<cosas.size();i++){
-        if(cosas[i]->getName()==que){
+    for(int i=0; i<stuff.size();i++){
+        if(stuff[i]->getName()==que){
             return i; //devuelve la posición donde está ese objeto
         }
     }
     return -1; //regresa -1 si no encontró ese item
 }
 
-void Room::sacaItem(int pos){
-    cosas.erase(cosas.begin()+pos); //Borra el de la posicion pos del vector
+void Room::deleteItem(int pos){
+    stuff.erase(stuff.begin()+pos); //Borra el de la posicion pos del vector
 }
 
-void Room::descriptionLarga(){
+void Room::longDescription(){
     std::cout << description << std::endl;
     std::cout << "Dentro de esta habitacion enigmatica tenemos: " << std::endl;
-    for (int i=0; i<cosas.size(); i++){
-        std::cout << cosas[i]->getDescription() << std::endl;
+    for (int i=0; i<stuff.size(); i++){
+        std::cout << stuff[i]->getDescription() << std::endl;
     }
 }
 

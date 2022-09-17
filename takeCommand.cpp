@@ -16,7 +16,7 @@ void takeCommand::execute(){
         if (num!=-1){
             Item* paraJugador=actual->getItem(num);
             Player->addItem(paraJugador);
-            actual->sacaItem(num);
+            actual->deleteItem(num);
             std::cout << "Ahora tienes en tu poder: "<< std::endl;
             std::cout << paraJugador->getName() << std::endl;
         }else{

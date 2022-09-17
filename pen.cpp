@@ -15,6 +15,6 @@ void pen::setMoreDamage(int _moreDamage){
     moreDamage = _moreDamage;
 }
 
-int pen::ejecuta(){
+int pen::execute(){
     return moreDamage;
 }

@@ -17,14 +17,14 @@ class Room {
         NPC* getNPC();
         void setNPC(NPC*);
         Item* getItem(int);
-        void sacaItem(int);
+        void deleteItem(int);
         void addItem(Item*);
         int searchItem(std::string);
-        void descriptionLarga();
+        void longDescription();
         bool keyRequired();
     private:
         std::string description;
-        std::vector<Item*> cosas;
+        std::vector<Item*> stuff;
         Room* exits[4];
         bool tieneLlave;
         NPC* NPC1;

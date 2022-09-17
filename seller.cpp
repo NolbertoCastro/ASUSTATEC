@@ -8,12 +8,12 @@ Item* seller::getItem(std::string name){
         if (inventory[i]->getName() == name){
             return inventory[i];
         } else{
-            std::cout << "No cuento con un articulo de ese estilo" << std::endl;
+            std::cout << "there's no item like that" << std::endl;
         }
     }
     return nullptr;
 }
 
-void seller::addItem(Item* cosa){
-    inventory.push_back(cosa);
+void seller::addItem(Item* item){
+    inventory.push_back(item);
 }

@@ -11,7 +11,7 @@ class pen:public Item{
         pen();
         pen(std::string, std::string, int, int);
         void setMoreDamage(int);
-        int ejecuta();
+        int execute();
 };
 
 #endif

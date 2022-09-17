@@ -6,13 +6,13 @@
 
 class Starbucks:public Item{
     private:
-        int sanacion;
+        int healing;
 
     public:
         Starbucks();
         Starbucks(std::string, std::string, int, int);
-        void setSanacion(int);
-        int ejecuta();
+        void setHealing(int);
+        int execute();
 };
 
 #endif
