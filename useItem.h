@@ -4,7 +4,7 @@
 #include <iostream>
 #include "Command.h"
 #include "Character.h"
-#include "Item.h"
+#include "item.h"
 #include "Room.h"
 
 class useItem: public Command{

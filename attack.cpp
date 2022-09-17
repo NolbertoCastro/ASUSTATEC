@@ -25,7 +25,7 @@ void attack::execute(){
         Enemy->getReward()->printItem();
         Enemy->setHealth(Enemy->getHealthC());
         Player->addItem(Enemy->getReward());
-        std::cout << 'You can see this item in your Inventory using the Command "inventory"' << std::endl;
+        std::cout << "You can see this item in your Inventory using the Command inventory" << std::endl;
     }
 }
 

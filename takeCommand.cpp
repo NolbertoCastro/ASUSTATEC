@@ -1,8 +1,8 @@
 #include "takeCommand.h"
 
 
-takeCommand::takeCommand(Character* Player):Command("take", ""){
-    Player=Player;
+takeCommand::takeCommand(Character* _Player):Command("take", ""){
+    Player= _Player;
 }
 
 void takeCommand::execute(){

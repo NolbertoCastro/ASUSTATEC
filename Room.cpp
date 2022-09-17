@@ -1,7 +1,7 @@
 #include "Room.h"
 
 Room::Room(){
-    description="Es una habitacion sin name";
+    description="Room without name";
     for (int i=0; i<4; i++){
         exits[i]=nullptr;
     }
@@ -62,7 +62,7 @@ void Room::deleteItem(int pos){
 
 void Room::longDescription(){
     std::cout << description << std::endl;
-    std::cout << "Dentro de esta habitacion enigmatica tenemos: " << std::endl;
+    std::cout << "Inside this room we have: " << std::endl;
     for (int i=0; i<stuff.size(); i++){
         std::cout << stuff[i]->getDescription() << std::endl;
     }

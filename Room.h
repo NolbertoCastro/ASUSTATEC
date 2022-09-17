@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <vector>
-#include "Item.h"
+#include "item.h"
 #include "NPC.h"
 
 class Room {

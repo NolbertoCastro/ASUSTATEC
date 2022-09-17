@@ -2,7 +2,7 @@
 #define NPC_H
 
 #include <iostream>
-#include "Item.h"
+#include "item.h"
 
 class NPC{
     public:

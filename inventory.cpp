@@ -1,7 +1,7 @@
 #include "inventory.h"
 
-inventory::inventory(Character* Player):Command("printMap", ""){
-    Player = Player;
+inventory::inventory(Character* _Player):Command("printMap", ""){
+    Player = _Player;
 }
 
 void inventory::execute(){

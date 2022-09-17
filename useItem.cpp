@@ -1,7 +1,7 @@
 #include "useItem.h"
 
-useItem::useItem(Character* Player):Command("useItem", ""){
-    Player = Player;
+useItem::useItem(Character* _Player):Command("useItem", ""){
+    Player = _Player;
 }
 
 void useItem::execute(){

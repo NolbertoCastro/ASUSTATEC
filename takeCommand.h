@@ -1,7 +1,7 @@
 #ifndef TAKECOMMAND_H
 #define TAKECOMMAND_H
 #include "Character.h"
-#include "Item.h"
+#include "item.h"
 #include "Command.h"
 #include "Room.h"
 

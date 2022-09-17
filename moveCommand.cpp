@@ -1,7 +1,7 @@
 #include "moveCommand.h"
 
-moveCommand::moveCommand(Character* Player):Command("move", ""){
-    Player=Player;
+moveCommand::moveCommand(Character* _Player):Command("move", ""){
+    Player = _Player;
 }
 
 void moveCommand::execute(){

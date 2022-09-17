@@ -122,7 +122,7 @@ void Game::printWelcome(){
     std::cout << "take + (item name) = Take items from the room you're at" << std::endl;
     std::cout << "useItem + (item name) = Use an item in your inventory" << std::endl;
     std::cout << "inventory = prints all the items in your inventory" << std::endl;
-    std::cout << "printMapa = prints the game map" << std::endl;
+    std::cout << "printMap = prints the game map" << std::endl;
     std::cout << "If you need help only write: help\n" << std::endl;
 }
 

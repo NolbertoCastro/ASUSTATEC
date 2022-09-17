@@ -2,9 +2,9 @@
 
 Starbucks::Starbucks(){
     setName("Starbucks");
-    setweight(3);
+    setWeight(3);
     setHealing(15);
-    setdescription("It gives you more Health and is hot");
+    setDescription("It gives you more Health and is hot");
 }
 
 Starbucks::Starbucks(std::string _name, std::string _description, int _weight, int _healing):Item(_name, _description, _weight){

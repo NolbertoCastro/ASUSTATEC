@@ -1,7 +1,7 @@
 #include "printMap.h"
 
-printMap::printMap(Character* Player):Command("printMap", ""){
-    Player = Player;
+printMap::printMap(Character* _Player):Command("printMap", ""){
+    Player = _Player;
 }
 
 void printMap::execute(){
