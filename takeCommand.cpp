@@ -7,7 +7,7 @@ takeCommand::takeCommand(Character* Player):Command("take", ""){
 
 void takeCommand::execute(){
     if (!promptExistance()){
-        std::cout<<"Que quieres taker de la habitación?...\n" << "no puedo helprte si no me das toda la información..." << std::endl;
+        std::cout<<"What you wanna do here?...\n" << "I can't help you if i don't have all the information..." << std::endl;
     }
     else{
         std::string cosa = getprompt();
@@ -17,10 +17,10 @@ void takeCommand::execute(){
             Item* paraJugador=actual->getItem(num);
             Player->addItem(paraJugador);
             actual->deleteItem(num);
-            std::cout << "Ahora tienes en tu poder: "<< std::endl;
+            std::cout << "Now you have the power: "<< std::endl;
             std::cout << paraJugador->getName() << std::endl;
         }else{
-            std::cout<< "Ese objeto no se encuentra en esta habitacion..."<<std::endl;
+            std::cout<< "This object is not in this room..."<<std::endl;
         }
     }
 }

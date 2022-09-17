@@ -9,7 +9,7 @@ Game::Game(){
 
 void Game::createComands(){
     wordList* command=parser.getcommand(); 
-    command->addCommand("Mover", new moveCommand(Player));
+    command->addCommand("move", new moveCommand(Player));
     command->addCommand("take", new takeCommand(Player));
     command->addCommand("help", new helpCommand(command));
     command->addCommand("printMap", new printMap(Player));
@@ -114,10 +114,10 @@ void Game::printWelcome(){
     std::cout << "\nTo play this game you can use the following commands: " << std::endl;
 
     std::cout << "\nhelp = print all the available commands" << std::endl;
-    std::cout << "Move N = Up" << std::endl;
-    std::cout << "Move S = Down" << std::endl;
-    std::cout << "Move W = left" << std::endl;
-    std::cout << "Move E = Right" << std::endl;
+    std::cout << "move N = Up" << std::endl;
+    std::cout << "move S = Down" << std::endl;
+    std::cout << "move W = left" << std::endl;
+    std::cout << "move E = Right" << std::endl;
     std::cout << "attack = attacks the villain in the room you're at" << std::endl;
     std::cout << "take + (item name) = Take items from the room you're at" << std::endl;
     std::cout << "useItem + (item name) = Use an item in your inventory" << std::endl;

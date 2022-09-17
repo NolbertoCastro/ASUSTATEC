@@ -9,7 +9,7 @@ class wordList{
     public:
         wordList();
         void addCommand(std::string, Command*);
-        int esCommand(std::string);
+        int isCommand(std::string);
         Command* getCommand(std::string);
         std::string allCommands();
 

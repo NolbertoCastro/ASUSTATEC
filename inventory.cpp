@@ -1,6 +1,6 @@
 #include "inventory.h"
 
-inventory::inventory(Character* Player):Command("printMapa", ""){
+inventory::inventory(Character* Player):Command("printMap", ""){
     Player = Player;
 }
 

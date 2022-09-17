@@ -6,7 +6,7 @@ useItem::useItem(Character* Player):Command("useItem", ""){
 
 void useItem::execute(){
     if (!promptExistance()){
-        std::cout<< "¿Qué quieres useItem?, debes especificarme que objeto quieres" << std::endl;
+        std::cout<< "¿What item you wanna use?,you have to specify with one you wnt to use" << std::endl;
     }
     else{
         std::string cosa = getprompt();
@@ -16,13 +16,13 @@ void useItem::execute(){
             if (cosa == "Starbucks"){
                 Player->setHealthC(Player->getHealth()+cosita->execute());
                 Player->setHealth(Player->getHealth()+cosita->execute());
-                std::cout << "El starbucks te aporto una health de +" << std::to_string(cosita->execute()) << std::endl;
+                std::cout << "The starbucks increased your health by " << std::to_string(cosita->execute()) << std::endl;
             } else if (cosa == "pen"){
                 Player->setAttack(*Player + cosita);
-                std::cout << "La pen te aporta mayor daño ahora golpeas con +" << std::to_string(cosita->execute()) << std::endl;
+                std::cout << "The pen increased your damage by " << std::to_string(cosita->execute()) << std::endl;
             }
         } else {
-            std::cout<< "No tienes ese objeto en tu inventory" << std::endl;
+            std::cout<< "You don't have this item in your inventory" << std::endl;
         }
     }
 }

@@ -2,7 +2,7 @@
 #define villain_H
 
 #include <iostream>
-#include "Item.h"
+#include "item.h"
 #include "NPC.h"
 
 class villain: public NPC{

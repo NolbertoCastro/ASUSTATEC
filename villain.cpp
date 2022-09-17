@@ -10,6 +10,6 @@ Item* villain::getReward(){
     return reward;
 }
 
-void villain::setReward(Item* _recompensa){
-    reward = _recompensa;
+void villain::setReward(Item* _reward){
+    reward = _reward;
 }
